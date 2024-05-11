@@ -1,17 +1,19 @@
 import { Container, Description, Information } from '../../styles/Cards';
 
-type CardProps = {
-  name: string;
-  imgURL: string;
+type MovieProps = {
+  title: string;
+  img: string;
   description: string;
+  available: string[];
+  assessments: number;
 };
 
-const Card = ({ name, imgURL, description }: CardProps) => {
+const Movie = ({ title, img, description }: MovieProps) => {
   return (
-    <Container style={{ background: `url(${imgURL})` }}>
+    <Container style={{ background: `url(${img})` }}>
       <Description>
         <Information>
-          <h4>{name}</h4>
+          <h4>{title}</h4>
 
           <p>{description}</p>
           <button>Ver detalhes</button>
@@ -21,4 +23,4 @@ const Card = ({ name, imgURL, description }: CardProps) => {
   );
 };
 
-export default Card;
+export default Movie;

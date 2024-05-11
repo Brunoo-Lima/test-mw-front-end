@@ -1,23 +1,19 @@
 import Card from './Card';
-import Background from '../../../assets/img/background-login.svg';
-import {
-  Cards,
-  Wrapper,
-  ContainerCards,
-  ButtonNextSlide,
-  ImageTeste,
-} from './styles/Characters';
+import Background from '/img/background.svg';
+import ArrowRight from '../../../assets/icons/arrow-right.svg';
+
+import { ImageTeste } from './styles/Characters';
 import { cards } from '../../data/data.json';
+import {
+  ButtonNextSlide,
+  Cards,
+  ContainerCards,
+  Wrapper,
+} from '../../styles/Container';
 
 const Characters = () => {
   return (
-    <Wrapper
-    // style={{
-    //   background: `url(${Background})`,
-    //   backgroundPosition: 'right',
-    //   backgroundRepeat: 'no-repeat',
-    // }}
-    >
+    <Wrapper>
       <ContainerCards>
         <Cards>
           {cards.map((card) => (
@@ -31,7 +27,9 @@ const Characters = () => {
         </Cards>
 
         <ButtonNextSlide>
-          <button>passar</button>
+          <button>
+            <img src={ArrowRight} alt="" />
+          </button>
         </ButtonNextSlide>
       </ContainerCards>
 

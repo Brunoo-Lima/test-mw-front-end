@@ -7,7 +7,11 @@ export const ImageTeste = styled.div`
     top: 0;
     height: 100vh;
 
-    mask-image: linear-gradient(to left, #000000 30%, rgba(0, 0, 0, 0.1) 10%);
+    mask-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.1) 30%,
+      rgba(0, 0, 0, 15) 10%
+    );
     filter: brightness(0.5);
   }
 `;

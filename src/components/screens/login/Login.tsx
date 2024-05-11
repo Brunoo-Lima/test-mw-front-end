@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import BackgroundLogin from '/img/background-login.svg';
+import BackgroundLogin from '/img/background.svg';
 import {
   Wrapper,
   ContainerLogin,
