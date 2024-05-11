@@ -1,16 +1,17 @@
-import { Wrapper, Container, Navbar } from './styles/Header';
+import { NavLink } from 'react-router-dom';
+import { Wrapper, Container, Logo, Navbar } from './styles/Header';
 
 const Header = () => {
   return (
     <Wrapper>
       <Container>
-        <h1>Titulo</h1>
+        <Logo>Marvel</Logo>
 
         <Navbar>
           <ul>
-            <li>Personagens</li>
-            <li>Filmes</li>
-            <li>Hqs</li>
+            <NavLink to="/characters">Personagens</NavLink>
+            <NavLink to="/movies">Filmes</NavLink>
+            <NavLink to="/comics">Hqs</NavLink>
             <li>Sair</li>
           </ul>
         </Navbar>

@@ -4,6 +4,7 @@ export const Wrapper = styled.header`
   background-color: #000000;
   color: #fff;
   padding: 0 2rem;
+  border-bottom: 2px solid #ff0000;
 `;
 
 export const Container = styled.div`
@@ -16,14 +17,30 @@ export const Container = styled.div`
   margin: auto;
 `;
 
+export const Logo = styled.h1`
+  width: 122px;
+  height: 54px;
+  background-color: #ff0000;
+
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const Navbar = styled.nav`
   ul {
     display: flex;
     list-style: none;
-    gap: 0 6rem;
+    gap: 0 2rem;
 
-    li {
-      font-size: 30px;
+    a {
+      font-size: 16px;
+      color: #ffffff;
+      text-decoration: none;
     }
   }
 `;

@@ -1,13 +1,15 @@
 import { Outlet } from 'react-router-dom';
 import { Container } from './styles/Default';
+import Header from '../screens/header/Header';
 
 const Default = () => {
   return (
-    <div>
+    <>
+      <Header />
       <Container>
         <Outlet />
       </Container>
-    </div>
+    </>
   );
 };
 
