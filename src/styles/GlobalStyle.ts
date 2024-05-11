@@ -20,4 +20,8 @@ export const GlobalStyle = createGlobalStyle`
     //teste
     font-family: Arial, Helvetica, sans-serif;
   }
+
+  body {
+    background-color: #000000;
+  }
 `;

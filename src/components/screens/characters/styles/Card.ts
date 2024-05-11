@@ -5,6 +5,7 @@ export const Container = styled.li`
   height: 439px;
 
   position: relative;
+  overflow: hidden;
 `;
 
 export const Description = styled.div`
@@ -25,6 +26,7 @@ export const Description = styled.div`
 export const Information = styled.div`
   h4 {
     font-size: 20px;
+    font-weight: 400;
     text-align: center;
     margin-bottom: 6px;
   }
