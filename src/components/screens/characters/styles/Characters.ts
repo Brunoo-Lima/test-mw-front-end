@@ -5,9 +5,8 @@ export const ImageTeste = styled.div`
     position: absolute;
     right: 0;
     top: 0;
-    height: 100vh;
 
-    mask-image: linear-gradient(to left, #000000 30%, rgba(0, 0, 0, 0.1) 10%);
+    mask-image: linear-gradient(to left, #000000 30%, rgba(0, 0, 0, 0.3) 10%);
     filter: brightness(0.5);
   }
 `;

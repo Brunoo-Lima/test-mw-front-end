@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  background-color: #1e1e1e;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-
-  height: 100vh;
+  padding: 10% 0;
 `;
 
 export const ImageTeste = styled.div`
@@ -15,7 +13,7 @@ export const ImageTeste = styled.div`
     position: absolute;
     right: 0;
     top: 0;
-    height: 100vh;
+    overflow: hidden;
 
     mask-image: linear-gradient(to left, #000000 30%, rgba(0, 0, 0, 0.1) 10%);
     filter: brightness(0.5);
@@ -35,6 +33,7 @@ export const Cards = styled.ul`
   display: flex;
   gap: 8rem;
   list-style: none;
+  padding: 2rem;
 `;
 
 export const ButtonNextSlide = styled.div`

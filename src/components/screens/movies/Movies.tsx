@@ -35,7 +35,7 @@ const Movies = () => {
       </ContainerCards>
 
       <ImageTeste>
-        <img src={Background} alt="" />
+        <img src={Background} alt="" width={855} height={768} />
       </ImageTeste>
     </Wrapper>
   );

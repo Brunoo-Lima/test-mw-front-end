@@ -6,12 +6,13 @@ export const Container = styled.li`
 
   position: relative;
   overflow: hidden;
+  border-radius: 30px;
 `;
 
 export const Description = styled.div`
   background: #ff0000;
   color: #ffffff;
-  filter: opacity(0.7);
+  filter: opacity(0.8);
 
   border-radius: 30px;
 

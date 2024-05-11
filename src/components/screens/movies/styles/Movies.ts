@@ -5,7 +5,6 @@ export const ImageTeste = styled.div`
     position: absolute;
     right: 0;
     top: 0;
-    height: 100vh;
 
     mask-image: linear-gradient(
       to left,
