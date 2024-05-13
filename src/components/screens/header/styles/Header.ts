@@ -34,6 +34,7 @@ export const Logo = styled.h1`
 export const Navbar = styled.nav`
   ul {
     display: flex;
+    align-items: center;
     list-style: none;
     gap: 0 2rem;
 
@@ -42,5 +43,19 @@ export const Navbar = styled.nav`
       color: #ffffff;
       text-decoration: none;
     }
+  }
+`;
+
+export const UserProfile = styled.li`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  button {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+
+    cursor: pointer;
   }
 `;

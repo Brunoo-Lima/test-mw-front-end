@@ -1,10 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Default from './components/layouts/Default';
-import Login from './components/screens/login/Login';
 import Characters from './components/screens/characters/Characters';
-import Home from './components/Home';
 import Movies from './components/screens/movies/Movies';
 import Comics from './components/screens/comics/Comics';
+import Home from './components/Home';
 
 export const router = createBrowserRouter([
   {
@@ -14,10 +13,6 @@ export const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-      },
-      {
-        path: 'login/',
-        element: <Login />,
       },
       {
         path: '/characters',

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import BackgroundLogin from '/img/background.svg';
 import {
   Wrapper,
@@ -12,8 +12,29 @@ import {
 } from './styles/Login';
 import Input from '../../form/Input';
 import Checkbox from '../../form/Checkbox';
+import { ChangeEvent, useState } from 'react';
+
+// type UserProps = {
+//   name: string;
+//   password: string;
+// };
 
 const Login = () => {
+  // const [user, setUser] = useState({
+  //   name: '',
+  //   password: '',
+  // });
+
+  // const navigate = useNavigate();
+
+  // function handleLogin() {
+  //   if (user.name !== 'Bruno' || user.password !== '123') {
+  //     return alert('Erro');
+  //   } else {
+  //     navigate('/characters');
+  //   }
+  // }
+
   return (
     <Wrapper>
       <ContainerLogin>
@@ -21,19 +42,19 @@ const Login = () => {
         <Title>Bem-vindo(a) de volta!</Title>
 
         <h2>Acesse sua conta:</h2>
-        <Forms className="" onSubmit={(e) => e.preventDefault()}>
+        <Forms onSubmit={(e) => e.preventDefault()}>
           <Input
             type="text"
             placeholder="Usuário"
-            // value={email}
-            // onChange={(e) => setEmail(e.target.value)}
+            // value={user.name}
+            // onChange={(e) => setUser(e.target.value)}
           />
 
           <Input
             type="password"
             placeholder="Senha"
-            // value={password}
-            // onChange={(e) => setPassword(e.target.value)}
+            // value={user.password}
+            // onChange={(e) => setUser(e.target.value)}
           />
 
           <ContentSaveLogin>
