@@ -10,17 +10,13 @@ import {
   ContainerCards,
   Wrapper,
 } from '../../styles/Container';
-import { useState } from 'react';
+import { useContext } from 'react';
 import Modal from '../../modal/Modal';
+import { Context } from '../../../UserContext';
 
 const Characters = () => {
-  const [isOpenModal, setIsOpenModal] = useState(false);
-
-  function handleOpenModal() {
-    setIsOpenModal(isOpenModal);
-  }
-
-  function handleModal() {}
+  const context = useContext(Context);
+  const { isOpenModal, handleModal } = context!;
 
   return (
     <Wrapper>
@@ -32,7 +28,7 @@ const Characters = () => {
               name={card.name}
               imgURL={card.imgURL}
               description={card.description}
-              handleOpenModal={handleOpenModal}
+              handleModal={handleModal}
             />
           ))}
         </Cards>
@@ -48,7 +44,7 @@ const Characters = () => {
         <img src={Background} alt="" />
       </ImageTeste>
 
-      {isOpenModal && <Modal />}
+      {isOpenModal && <Modal handleModal={handleModal} />}
     </Wrapper>
   );
 };

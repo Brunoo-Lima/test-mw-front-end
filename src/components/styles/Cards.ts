@@ -27,18 +27,21 @@ export const Description = styled.div`
 export const Information = styled.div`
   h4 {
     font-size: 20px;
+    line-height: 1.2;
     font-weight: 400;
     text-align: center;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   p {
     font-size: 12px;
-    line-height: 1.8;
+    font-family: 'Axiforma Light', sans-serif;
+    line-height: 1.5;
   }
 
   button {
     font-size: 20px;
+    font-family: 'Axiforma Light';
     color: #ffffff;
     background: transparent;
     border: none;

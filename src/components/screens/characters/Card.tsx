@@ -4,10 +4,10 @@ type CardProps = {
   name: string;
   imgURL: string;
   description: string;
-  handleOpenModal: () => void;
+  handleModal: () => void;
 };
 
-const Card = ({ name, imgURL, description, handleOpenModal }: CardProps) => {
+const Card = ({ name, imgURL, description, handleModal }: CardProps) => {
   return (
     <Container style={{ background: `url(${imgURL})` }}>
       <Description>
@@ -15,7 +15,7 @@ const Card = ({ name, imgURL, description, handleOpenModal }: CardProps) => {
           <h4>{name}</h4>
 
           <p>{description}</p>
-          <button onClick={handleOpenModal}>Ver detalhes</button>
+          <button onClick={handleModal}>Ver detalhes</button>
         </Information>
       </Description>
     </Container>
