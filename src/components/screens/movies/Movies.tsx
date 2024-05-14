@@ -1,42 +1,47 @@
 import { movies } from '../../data/data.json';
 import Movie from './Movie';
-import {
-  ButtonNextSlide,
-  Cards,
-  ContainerCards,
-  Wrapper,
-} from '../../styles/Container';
+import { ButtonNext, Wrapper } from '../../styles/Container';
 import Background from '/img/background.svg';
 import { ImageTeste } from './styles/Movies';
-import ArrowRight from '../../../assets/icons/arrow-right.svg';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 
 const Movies = () => {
   return (
     <Wrapper>
-      <ContainerCards>
-        <Cards>
-          {movies.map((movie) => (
+      <ImageTeste>
+        <img src={Background} alt="" width={855} height={768} />
+      </ImageTeste>
+
+      <Swiper
+        grabCursor={true}
+        centeredSlides={true}
+        loop={true}
+        slidesPerView={3}
+        navigation={{
+          nextEl: '.swiper-button-next',
+        }}
+        modules={[Pagination, Navigation]}
+        className="slider-controll"
+      >
+        {movies.map((movie) => (
+          <SwiperSlide key={movie.id}>
             <Movie
-              key={movie.id}
               title={movie.title}
               img={movie.img}
               description={movie.description}
               available={movie.available}
               assessments={movie.assessments}
             />
-          ))}
-        </Cards>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-        <ButtonNextSlide>
-          <button>
-            <img src={ArrowRight} alt="" />
-          </button>
-        </ButtonNextSlide>
-      </ContainerCards>
-
-      <ImageTeste>
-        <img src={Background} alt="" width={855} height={768} />
-      </ImageTeste>
+      <ButtonNext className="swiper-button-next"></ButtonNext>
     </Wrapper>
   );
 };

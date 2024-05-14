@@ -1,18 +1,17 @@
 import Card from './Card';
 import Background from '/img/background.svg';
-import ArrowRight from '../../../assets/icons/arrow-right.svg';
 
-import { ImageTeste } from './styles/Characters';
 import { cards } from '../../data/data.json';
-import {
-  ButtonNextSlide,
-  Cards,
-  ContainerCards,
-  Wrapper,
-} from '../../styles/Container';
+import { Wrapper, ButtonNext, ImageTeste } from '../../styles/Container';
 import { useContext } from 'react';
 import Modal from '../../modal/Modal';
 import { Context } from '../../../UserContext';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+import { Pagination, Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Characters = () => {
   const context = useContext(Context);
@@ -20,29 +19,34 @@ const Characters = () => {
 
   return (
     <Wrapper>
-      <ContainerCards>
-        <Cards>
-          {cards.map((card) => (
+      <ImageTeste>
+        <img src={Background} alt="" />
+      </ImageTeste>
+
+      <Swiper
+        grabCursor={true}
+        centeredSlides={true}
+        loop={true}
+        slidesPerView={3}
+        navigation={{
+          nextEl: '.swiper-button-next',
+        }}
+        modules={[Pagination, Navigation]}
+        className="slider-controll"
+      >
+        {cards.map((card) => (
+          <SwiperSlide key={card.id}>
             <Card
-              key={card.id}
               name={card.name}
               imgURL={card.imgURL}
               description={card.description}
               handleModal={handleModal}
             />
-          ))}
-        </Cards>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-        <ButtonNextSlide>
-          <button>
-            <img src={ArrowRight} alt="" />
-          </button>
-        </ButtonNextSlide>
-      </ContainerCards>
-
-      <ImageTeste>
-        <img src={Background} alt="" />
-      </ImageTeste>
+      <ButtonNext className="swiper-button-next"></ButtonNext>
 
       {isOpenModal && <Modal handleModal={handleModal} />}
     </Wrapper>

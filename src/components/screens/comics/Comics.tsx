@@ -1,43 +1,48 @@
-import {
-  ButtonNextSlide,
-  Cards,
-  ContainerCards,
-  Wrapper,
-} from '../../styles/Container';
+import { ButtonNext, Wrapper } from '../../styles/Container';
 import Comic from './Comic';
 import { ImageTeste } from './styles/Comics';
 import Background from '/img/background.svg';
-import ArrowRight from '../../../assets/icons/arrow-right.svg';
 
 import { comics } from '../../data/data.json';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 
 const Comics = () => {
   return (
     <Wrapper>
-      <ContainerCards>
-        <Cards>
-          {comics.map((comic) => (
+      <ImageTeste>
+        <img src={Background} alt="" />
+      </ImageTeste>
+
+      <Swiper
+        grabCursor={true}
+        centeredSlides={true}
+        loop={true}
+        slidesPerView={3}
+        navigation={{
+          nextEl: '.swiper-button-next',
+        }}
+        modules={[Pagination, Navigation]}
+        className="slider-controll"
+      >
+        {comics.map((comic) => (
+          <SwiperSlide key={comic.id}>
             <Comic
-              key={comic.id}
               title={comic.title}
               img={comic.img}
               description={comic.description}
               available={comic.available}
               assessments={comic.assessments}
             />
-          ))}
-        </Cards>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-        <ButtonNextSlide>
-          <button>
-            <img src={ArrowRight} alt="" />
-          </button>
-        </ButtonNextSlide>
-      </ContainerCards>
-
-      <ImageTeste>
-        <img src={Background} alt="" />
-      </ImageTeste>
+      <ButtonNext className="swiper-button-next"></ButtonNext>
     </Wrapper>
   );
 };
