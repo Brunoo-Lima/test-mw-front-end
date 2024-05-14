@@ -1,22 +1,29 @@
+import { ReactNode } from 'react';
 import { Wrapper, Description, Button } from './styles/Modal';
 import HomemAranha from '/img/cards/homem-aranha.svg';
 
 import { CircleX } from 'lucide-react';
 
-type ModalProps = {
+type ModalProps<T extends ReactNode> = {
+  title?: string;
+  content?: T;
+  icon?: string;
   handleModal: () => void;
 };
 
-const Modal = ({ handleModal }: ModalProps) => {
+const Modal = <T extends ReactNode>({
+  title,
+  content,
+  icon,
+  handleModal,
+}: ModalProps<T>) => {
   return (
     <Wrapper>
-      <img src={HomemAranha} alt="" />
+      <img src={icon} alt="" />
 
       <Description>
-        <h2>Wanda Maximoff</h2>
-        <p>Aparições:</p>
-
-        <p>Avaliações dos Fãs: </p>
+        <h2>{title}</h2>
+        {typeof content === 'string' ? <p>{content}</p> : content}
       </Description>
 
       <Button onClick={handleModal}>

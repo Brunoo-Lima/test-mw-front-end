@@ -2,7 +2,8 @@ import Card from './Card';
 import Background from '/img/background.svg';
 
 import { cards } from '../../data/data.json';
-import { Wrapper, ButtonNext, ImageTeste } from '../../styles/Container';
+import { Wrapper, ButtonNext } from '../../styles/Container';
+
 import { useContext } from 'react';
 import Modal from '../../modal/Modal';
 import { Context } from '../../../UserContext';
@@ -12,6 +13,7 @@ import 'swiper/css/navigation';
 
 import { Pagination, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Image } from './styles/Characters';
 
 const Characters = () => {
   const context = useContext(Context);
@@ -19,9 +21,7 @@ const Characters = () => {
 
   return (
     <Wrapper>
-      <ImageTeste>
-        <img src={Background} alt="" />
-      </ImageTeste>
+      <Image src={Background} alt="" />
 
       <Swiper
         grabCursor={true}

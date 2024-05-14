@@ -1,8 +1,8 @@
 import { movies } from '../../data/data.json';
 import Movie from './Movie';
-import { ButtonNext, Wrapper } from '../../styles/Container';
+import { Wrapper, ButtonNext } from '../../styles/Container';
 import Background from '/img/background.svg';
-import { ImageTeste } from './styles/Movies';
+import { Image } from './styles/Movies';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -13,9 +13,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 const Movies = () => {
   return (
     <Wrapper>
-      <ImageTeste>
-        <img src={Background} alt="" width={855} height={768} />
-      </ImageTeste>
+      <Image src={Background} alt="" width={855} height={768} />
 
       <Swiper
         grabCursor={true}

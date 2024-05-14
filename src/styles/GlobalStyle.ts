@@ -29,8 +29,6 @@ export const GlobalStyle = createGlobalStyle`
 
   :root {
     -webkit-font-smoothing: antialiased;
-    //teste
-    /* font-family: Arial, Helvetica, sans-serif; */
   }
 
   body {

@@ -4,6 +4,7 @@ import Characters from './components/screens/characters/Characters';
 import Movies from './components/screens/movies/Movies';
 import Comics from './components/screens/comics/Comics';
 import Home from './components/Home';
+import Login from './components/screens/login/Login';
 
 export const router = createBrowserRouter([
   {

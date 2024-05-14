@@ -1,6 +1,5 @@
 import { ButtonNext, Wrapper } from '../../styles/Container';
 import Comic from './Comic';
-import { ImageTeste } from './styles/Comics';
 import Background from '/img/background.svg';
 
 import { comics } from '../../data/data.json';
@@ -10,13 +9,12 @@ import 'swiper/css/navigation';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { Image } from './styles/Comics';
 
 const Comics = () => {
   return (
     <Wrapper>
-      <ImageTeste>
-        <img src={Background} alt="" />
-      </ImageTeste>
+      <Image src={Background} alt="" width={855} height={768} />
 
       <Swiper
         grabCursor={true}
