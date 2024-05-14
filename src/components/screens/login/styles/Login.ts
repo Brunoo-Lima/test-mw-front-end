@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  background: #000000;
   height: 100vh;
   max-width: 100%;
 
@@ -12,9 +11,6 @@ export const Wrapper = styled.div`
     position: relative;
     z-index: 1000;
     grid-template-columns: 1fr;
-  }
-
-  @media (max-width: 468px) {
   }
 `;
 
@@ -29,22 +25,22 @@ export const ContainerLogin = styled.div`
   }
 
   h2 {
-    color: #84848d;
+    color: ${({ theme }) => theme.colors.tertiary};
     text-align: start;
-    font-size: 1rem;
+    font-size: ${({ theme }) => theme.size.xl};
   }
 
   button {
-    background-color: rgba(255, 0, 0);
+    background-color: ${({ theme }) => theme.colors.primary};
     margin: 0.875rem 0;
     width: 100%;
     height: 55px;
 
     border: none;
-    border-radius: 33px;
+    border-radius: 2.0625rem;
 
-    color: #ffffff;
-    font-size: 20px;
+    color: ${({ theme }) => theme.colors.text};
+    font-size: ${({ theme }) => theme.size.xxl};
     font-weight: 500;
 
     cursor: pointer;
@@ -52,11 +48,11 @@ export const ContainerLogin = styled.div`
 `;
 
 export const Logo = styled.h1`
-  background-color: #ff0000;
-  color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.text};
 
-  font-size: 40px;
-  font-family: 'MarvelRegular', sans-serif;
+  font-size: ${({ theme }) => theme.size.xxxl};
+  font-family: ${({ theme }) => theme.fonts.logo};
   text-transform: uppercase;
   letter-spacing: 1px;
 
@@ -66,15 +62,15 @@ export const Logo = styled.h1`
   margin: 0 auto;
 
   width: 150px;
-  padding: 10px 0 2px 0;
-  border-radius: 2px;
+  padding: 0.625rem 0 0.125rem 0;
+  border-radius: 0.125rem;
 `;
 
 export const Title = styled.h1`
-  margin-top: 32px;
+  margin-top: 2rem;
 
-  font-size: 24px;
-  color: #ff0000;
+  font-size: ${({ theme }) => theme.size.xxl};
+  color: ${({ theme }) => theme.colors.primary};
   text-align: center;
 `;
 
@@ -98,29 +94,29 @@ export const ContentSaveLogin = styled.div`
   }
 
   a {
-    font-size: 14px;
+    font-size: ${({ theme }) => theme.size.xs};
     text-decoration: none;
-    color: #84848d;
-  }
+    color: ${({ theme }) => theme.colors.tertiary};
 
-  a::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #ff0000;
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: ${({ theme }) => theme.colors.primary};
+    }
   }
 `;
 
 export const Register = styled.p`
-  font-size: 14px;
-  color: #84848d;
+  font-size: ${({ theme }) => theme.size.xs};
+  color: ${({ theme }) => theme.colors.tertiary};
   text-align: center;
 
   a {
-    font-size: 14px;
+    font-size: ${({ theme }) => theme.size.xs};
     text-decoration: none;
-    color: rgba(255, 0, 0);
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;
 

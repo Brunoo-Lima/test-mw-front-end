@@ -11,6 +11,18 @@ export const Wrapper = styled.section`
 
   .slider-controll {
     width: 75%;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      width: 80%;
+    }
+  }
+
+  .swiper {
+    position: relative;
   }
 `;
 
@@ -18,5 +30,9 @@ export const ButtonNext = styled.div`
   position: absolute;
   transform: translateX(-300%);
   top: 50%;
-  color: #ff0000;
+  color: ${({ theme }) => theme.colors.primary};
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `;

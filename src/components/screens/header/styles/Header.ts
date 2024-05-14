@@ -16,6 +16,12 @@ export const Container = styled.div`
   max-width: 1400px;
   height: 114px;
   margin: auto;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 1.8rem 0;
+    height: auto;
+  }
 `;
 
 export const Logo = styled.h1`

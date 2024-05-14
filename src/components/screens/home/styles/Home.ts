@@ -10,11 +10,11 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled.h1`
-  background-color: #ff0000;
-  color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.text};
 
-  font-size: 40px;
-  font-family: 'MarvelRegular', sans-serif;
+  font-size: ${({ theme }) => theme.size.xxxl};
+  font-family: ${({ theme }) => theme.fonts.logo};
   text-transform: uppercase;
   letter-spacing: 1px;
 
@@ -24,6 +24,6 @@ export const Logo = styled.h1`
   margin: 0 auto;
 
   width: 150px;
-  padding: 10px 0 2px 0;
-  border-radius: 2px;
+  padding: 0.625rem 0 0.125rem 0;
+  border-radius: 0.125rem;
 `;

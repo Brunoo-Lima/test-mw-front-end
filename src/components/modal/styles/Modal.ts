@@ -12,17 +12,17 @@ export const Wrapper = styled.div`
   right: auto;
   z-index: 1000;
 
-  border-radius: 30px;
+  border-radius: 1.875rem;
   display: flex;
 `;
 
 export const Description = styled.div`
   padding: 4rem 2rem;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.text};
 
   h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: ${({ theme }) => theme.size.xxl};
+    margin-bottom: 0.625rem;
   }
 `;
 
@@ -34,6 +34,6 @@ export const Button = styled.button`
   cursor: pointer;
 
   position: absolute;
-  bottom: 20px;
-  right: 28px;
+  bottom: 1.25rem;
+  right: 1.75rem;
 `;

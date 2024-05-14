@@ -6,15 +6,15 @@ export const Container = styled.div`
 
   position: relative;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 1.875rem;
 `;
 
 export const Description = styled.div`
-  background: #ff0000;
-  color: #ffffff;
+  background: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.text};
   filter: opacity(0.8);
 
-  border-radius: 30px;
+  border-radius: 1.875rem;
 
   position: absolute;
   bottom: 0;
@@ -26,30 +26,31 @@ export const Description = styled.div`
 
 export const Information = styled.div`
   h4 {
-    font-size: 20px;
+    font-size: ${({ theme }) => theme.size.xxl};
     line-height: 1.2;
     font-weight: 400;
     text-align: center;
-    margin-bottom: 4px;
+    margin-bottom: 0.25rem;
   }
 
   p {
-    font-size: 12px;
-    font-family: 'Axiforma Light', sans-serif;
+    font-size: ${({ theme }) => theme.size.xs};
+    font-family: ${({ theme }) => theme.fonts.font_stack_light};
     line-height: 1.5;
   }
 
   button {
-    font-size: 20px;
-    font-family: 'Axiforma Light';
-    color: #ffffff;
+    font-size: ${({ theme }) => theme.size.xxl};
+    font-family: ${({ theme }) => theme.fonts.font_stack_light};
+
+    color: ${({ theme }) => theme.colors.text};
     background: transparent;
     border: none;
     cursor: pointer;
-    margin-top: 6px;
+    margin-top: 0.375rem;
     position: absolute;
 
-    bottom: 12px;
+    bottom: 0.75rem;
     left: 0;
     right: 0;
   }

@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 import AxiformaRegular from '../../src/assets/fonts/Axiforma/Kastelov - Axiforma Regular.otf';
 import AxiformaLight from '../../src/assets/fonts/Axiforma/Kastelov - Axiforma Light.otf';
-
 import AxiformaThin from '../../src/assets/fonts/Axiforma/Kastelov - Axiforma Thin.otf';
 
 import MarvelLogo from '../assets/fonts/MarvelRegular-Dj83.ttf';
@@ -39,7 +38,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #000000;
-    font-family: "Axiforma Regular", sans-serif;
+    background-color: ${({ theme }) => theme.colors.second};
+    font-family: ${({ theme }) => theme.fonts.font_stack};
+    color: ${({ theme }) => theme.colors.text};
   }
 `;

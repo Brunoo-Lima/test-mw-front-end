@@ -6,13 +6,13 @@ export const Container = styled.div`
   gap: 0.2rem;
 
   label {
-    font-size: 14px;
+    font-size: ${({ theme }) => theme.size.xs};
     color: #84848d;
     margin-top: 0.2rem;
   }
 
   input {
-    border-radius: 4px;
-    accent-color: #ff0000;
+    border-radius: 0.25rem;
+    accent-color: ${({ theme }) => theme.colors.primary};
   }
 `;

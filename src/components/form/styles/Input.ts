@@ -13,15 +13,15 @@ export const InputContainer = styled.input`
   padding-left: 2rem;
   outline: none;
 
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.size.xxl};
   transition: all 0.2s;
 
   &::placeholder {
     color: #d1d1d6;
-    font-size: 18px;
+    font-size: ${({ theme }) => theme.size.xxl};
   }
 
   &:focus-visible {
-    border-color: #ff0000;
+    border-color: ${({ theme }) => theme.colors.primary};
   }
 `;

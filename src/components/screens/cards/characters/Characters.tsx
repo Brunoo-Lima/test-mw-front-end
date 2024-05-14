@@ -21,21 +21,41 @@ const Characters = () => {
 
   return (
     <Wrapper>
-      <Image src={Background} alt="" />
+      <Image
+        src={Background}
+        alt="Imagem de fundo dos Vingadores"
+        width={855}
+        height={768}
+      />
 
       <Swiper
         grabCursor={true}
         centeredSlides={true}
         loop={true}
-        slidesPerView={3}
         navigation={{
           nextEl: '.swiper-button-next',
         }}
         modules={[Pagination, Navigation]}
+        breakpoints={{
+          // Quando a largura da tela for >= 320px
+          320: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            centeredSlides: false,
+          },
+          900: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+            centeredSlides: false,
+          },
+        }}
         className="slider-controll"
       >
         {cards.map((card) => (
-          <SwiperSlide key={card.id}>
+          <SwiperSlide key={card.id} className="swiper">
             <Card
               name={card.name}
               imgURL={card.imgURL}
