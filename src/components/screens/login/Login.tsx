@@ -1,4 +1,4 @@
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import BackgroundLogin from '/img/background.svg';
 import {
   Wrapper,
@@ -12,28 +12,12 @@ import {
 } from './styles/Login';
 import Input from '../../form/Input';
 import Checkbox from '../../form/Checkbox';
-import { ChangeEvent, useState } from 'react';
-
-// type UserProps = {
-//   name: string;
-//   password: string;
-// };
+import { useContext } from 'react';
+import { Context } from '../../../UserContext';
 
 const Login = () => {
-  // const [user, setUser] = useState({
-  //   name: '',
-  //   password: '',
-  // });
-
-  // const navigate = useNavigate();
-
-  // function handleLogin() {
-  //   if (user.name !== 'Bruno' || user.password !== '123') {
-  //     return alert('Erro');
-  //   } else {
-  //     navigate('/characters');
-  //   }
-  // }
+  const context = useContext(Context);
+  const { user, userLogin, handleChange } = context!;
 
   return (
     <Wrapper>
@@ -42,19 +26,19 @@ const Login = () => {
         <Title>Bem-vindo(a) de volta!</Title>
 
         <h2>Acesse sua conta:</h2>
-        <Forms onSubmit={(e) => e.preventDefault()}>
+        <Forms onSubmit={userLogin}>
           <Input
             type="text"
             placeholder="Usuário"
-            // value={user.name}
-            // onChange={(e) => setUser(e.target.value)}
+            value={user.name}
+            onChange={handleChange('name')}
           />
 
           <Input
             type="password"
             placeholder="Senha"
-            // value={user.password}
-            // onChange={(e) => setUser(e.target.value)}
+            value={user.password}
+            onChange={handleChange('password')}
           />
 
           <ContentSaveLogin>
@@ -63,11 +47,7 @@ const Login = () => {
             <Link to="/*">Esqueci a senha</Link>
           </ContentSaveLogin>
 
-          <button
-          // onClick={handleLogin}
-          >
-            Entrar
-          </button>
+          <button type="submit">Entrar</button>
 
           <Register>
             Ainda não tem o login? <Link to="/register">Cadastre-se</Link>
@@ -75,7 +55,12 @@ const Login = () => {
         </Forms>
       </ContainerLogin>
 
-      <Background src={BackgroundLogin} alt="" width={855} height={768} />
+      <Background
+        src={BackgroundLogin}
+        alt="Imagem de fundo dos Vingadores"
+        width={855}
+        height={768}
+      />
     </Wrapper>
   );
 };

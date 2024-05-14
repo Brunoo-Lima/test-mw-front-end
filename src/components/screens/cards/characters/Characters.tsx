@@ -1,12 +1,12 @@
 import Card from './Card';
 import Background from '/img/background.svg';
 
-import { cards } from '../../data/data.json';
-import { Wrapper, ButtonNext } from '../../styles/Container';
+import { cards } from '../../../data/data.json';
+import { Wrapper, ButtonNext } from '../../cards/styles/Container';
 
 import { useContext } from 'react';
-import Modal from '../../modal/Modal';
-import { Context } from '../../../UserContext';
+import Modal from '../../../modal/Modal';
+import { Context } from '../../../../UserContext';
 
 import 'swiper/css';
 import 'swiper/css/navigation';

@@ -1,4 +1,4 @@
-import { Container, Description, Information } from '../../styles/Cards';
+import { Container, Description, Information } from '../../cards/styles/Cards';
 
 type CardProps = {
   name: string;

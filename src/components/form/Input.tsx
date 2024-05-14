@@ -4,14 +4,20 @@ import { Container, InputContainer } from './styles/Input';
 type InputProps = {
   type: string;
   placeholder: string;
-  value?: string;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Input = ({ placeholder, type, ...rest }: InputProps) => {
+const Input = ({ placeholder, type, onChange, value, ...rest }: InputProps) => {
   return (
     <Container>
-      <InputContainer type={type} placeholder={placeholder} {...rest} />
+      <InputContainer
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        {...rest}
+      />
     </Container>
   );
 };

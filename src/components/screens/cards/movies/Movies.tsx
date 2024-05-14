@@ -1,6 +1,6 @@
-import { movies } from '../../data/data.json';
+import { movies } from '../../../data/data.json';
 import Movie from './Movie';
-import { Wrapper, ButtonNext } from '../../styles/Container';
+import { Wrapper, ButtonNext } from '../../cards/styles/Container';
 import Background from '/img/background.svg';
 import { Image } from './styles/Movies';
 

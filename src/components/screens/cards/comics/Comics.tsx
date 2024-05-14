@@ -1,8 +1,8 @@
-import { ButtonNext, Wrapper } from '../../styles/Container';
+import { ButtonNext, Wrapper } from '../../cards/styles/Container';
 import Comic from './Comic';
 import Background from '/img/background.svg';
 
-import { comics } from '../../data/data.json';
+import { comics } from '../../../data/data.json';
 
 import 'swiper/css';
 import 'swiper/css/navigation';

@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Header from './components/screens/header/Header';
 import Login from './components/screens/login/Login';
 import { UserProvider } from './UserContext';
 import ProtectedRoute from './components/helper/ProtectedRoute';
-import Home from './components/home/Home';
+import Home from './components/screens/home/Home';
+import User from './components/screens/user/User';
 
 const App = () => {
   return (
@@ -14,10 +14,10 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="login/*" element={<Login />} />
             <Route
-              path="conta/*"
+              path="/*"
               element={
                 <ProtectedRoute>
-                  <Header />
+                  <User />
                 </ProtectedRoute>
               }
             />

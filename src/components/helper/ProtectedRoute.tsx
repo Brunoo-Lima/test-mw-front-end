@@ -8,14 +8,12 @@ type ProtectedRouteProps = {
 
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   const context = useContext(Context);
-  const { login } = context!;
+  const { user } = context!;
 
-  if (login) {
-    return children;
-  } else if (login === false) {
-    return <Navigate to="/login" />;
+  if (user) {
+    return <>{children}</>;
   } else {
-    return <></>;
+    return <Navigate to="/login" />;
   }
 };
 

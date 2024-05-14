@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.header`
   background-color: #000000;
   color: #fff;
+
   padding: 0 2rem;
   border-bottom: 2px solid #ff0000;
 `;
@@ -18,38 +19,44 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled.h1`
-  width: 122px;
-  height: 54px;
   background-color: #ff0000;
+  color: #ffffff;
 
+  font-size: 40px;
+  font-family: 'MarvelRegular', sans-serif;
   text-transform: uppercase;
-  font-size: 24px;
-  font-weight: bold;
+  letter-spacing: 1px;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 150px;
+  padding: 10px 0 2px 0;
+  border-radius: 2px;
 `;
 
 export const Navbar = styled.nav`
-  ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 0 2rem;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 0 2rem;
 
-    a {
-      font-size: 16px;
-      color: #ffffff;
-      text-decoration: none;
-    }
+  a {
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
   }
 `;
 
-export const UserProfile = styled.li`
+export const UserProfile = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
+  &:active {
+    color: red;
+  }
 
   button {
     background: transparent;
@@ -57,5 +64,10 @@ export const UserProfile = styled.li`
     color: #ffffff;
 
     cursor: pointer;
+
+    p {
+      font-size: 16px;
+      font-weight: 500;
+    }
   }
 `;
