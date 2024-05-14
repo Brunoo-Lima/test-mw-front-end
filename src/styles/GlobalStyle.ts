@@ -5,6 +5,8 @@ import AxiformaLight from '../../src/assets/fonts/Axiforma/Kastelov - Axiforma L
 
 import AxiformaThin from '../../src/assets/fonts/Axiforma/Kastelov - Axiforma Thin.otf';
 
+import MarvelLogo from '../assets/fonts/MarvelRegular-Dj83.ttf';
+
 export const GlobalStyle = createGlobalStyle`
   * {
     padding: 0;
@@ -25,6 +27,11 @@ export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "Axiforma Thin";
     src: url(${AxiformaThin}) format('opentype');
+  }
+
+  @font-face {
+    font-family: "MarvelRegular";
+    src: url(${MarvelLogo}) format('TrueType');
   }
 
   :root {

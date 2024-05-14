@@ -2,7 +2,6 @@ import { NavLink, Navigate } from 'react-router-dom';
 import { Wrapper, Container, Logo, Navbar, UserProfile } from './styles/Header';
 import Profile from '/img/profile.svg';
 import { useState } from 'react';
-import Login from '../login/Login';
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -18,9 +17,9 @@ const Header = () => {
 
         <Navbar>
           <ul>
-            <NavLink to="/characters">Personagens</NavLink>
-            <NavLink to="/movies">Filmes</NavLink>
-            <NavLink to="/comics">Hqs</NavLink>
+            <NavLink to="conta/characters">Personagens</NavLink>
+            <NavLink to="conta/movies">Filmes</NavLink>
+            <NavLink to="conta/comics">Hqs</NavLink>
             <UserProfile>
               <img src={Profile} alt="Foto do usuário" />
               <button onClick={handleClick}>
@@ -30,6 +29,7 @@ const Header = () => {
           </ul>
         </Navbar>
       </Container>
+
       {isLoggedIn && <Navigate to="/login" />}
     </Wrapper>
   );

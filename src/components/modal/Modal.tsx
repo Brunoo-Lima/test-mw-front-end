@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import { Wrapper, Description, Button } from './styles/Modal';
-import HomemAranha from '/img/cards/homem-aranha.svg';
 
 import { CircleX } from 'lucide-react';
 
