@@ -14,7 +14,12 @@ import { Image } from './styles/Comics';
 const Comics = () => {
   return (
     <Wrapper>
-      <Image src={Background} alt="" width={855} height={768} />
+      <Image
+        src={Background}
+        alt="Imagem de fundo dos Vingadores"
+        width={855}
+        height={768}
+      />
 
       <Swiper
         grabCursor={true}
@@ -23,6 +28,22 @@ const Comics = () => {
         slidesPerView={3}
         navigation={{
           nextEl: '.swiper-button-next',
+        }}
+        breakpoints={{
+          // Quando a largura da tela for >= 320px
+          320: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            centeredSlides: false,
+          },
+          900: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+            centeredSlides: false,
+          },
         }}
         modules={[Pagination, Navigation]}
         className="slider-controll"

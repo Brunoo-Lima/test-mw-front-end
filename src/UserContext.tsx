@@ -1,10 +1,4 @@
-import {
-  ChangeEvent,
-  FormEvent,
-  ReactNode,
-  createContext,
-  useState,
-} from 'react';
+import { FormEvent, ReactNode, createContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 interface UserProps {
@@ -23,7 +17,10 @@ interface UserContextProps {
   setUser: React.Dispatch<React.SetStateAction<UserProps>>;
 
   userLogin: (e: FormEvent) => void;
-  handleChange: (field: 'name' | 'password') => void;
+  handleChangeEvents: (
+    e: React.ChangeEvent<HTMLInputElement>,
+    fieldName: string
+  ) => void;
 
   logOut: () => void;
 }
@@ -60,18 +57,18 @@ export const UserProvider = ({ children }: ContextProps) => {
       localStorage.setItem('username', user.name);
       localStorage.setItem('password', user.password);
       navigate('conta/characters');
-      // setIsLoggedIn(true);
     }
   };
 
-  const handleChange =
-    <T extends keyof UserProps>(field: T) =>
-    (event: ChangeEvent<HTMLInputElement>) => {
-      setUser((prevUser) => ({
-        ...prevUser!,
-        [field]: event.target.value,
-      }));
-    };
+  const handleChangeEvents = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >,
+    fieldName: string
+  ) => {
+    const { value } = e.target;
+    setUser({ ...user, [fieldName]: value });
+  };
 
   const logOut = () => {
     setUser({
@@ -92,7 +89,7 @@ export const UserProvider = ({ children }: ContextProps) => {
     user,
     setUser,
     userLogin,
-    handleChange,
+    handleChangeEvents,
     logOut,
   };
 

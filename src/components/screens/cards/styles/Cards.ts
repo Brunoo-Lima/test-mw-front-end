@@ -34,7 +34,7 @@ export const Information = styled.div`
   }
 
   p {
-    font-size: ${({ theme }) => theme.size.xs};
+    font-size: ${({ theme }) => theme.size.sm};
     font-family: ${({ theme }) => theme.fonts.font_stack_light};
     line-height: 1.5;
   }

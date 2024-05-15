@@ -17,7 +17,7 @@ import { Context } from '../../../UserContext';
 
 const Login = () => {
   const context = useContext(Context);
-  const { user, userLogin, handleChange } = context!;
+  const { user, userLogin, handleChangeEvents } = context!;
 
   return (
     <Wrapper>
@@ -31,14 +31,14 @@ const Login = () => {
             type="text"
             placeholder="Usuário"
             value={user.name}
-            onChange={handleChange('name')}
+            onChange={(e) => handleChangeEvents(e, 'name')}
           />
 
           <Input
             type="password"
             placeholder="Senha"
             value={user.password}
-            onChange={handleChange('password')}
+            onChange={(e) => handleChangeEvents(e, 'password')}
           />
 
           <ContentSaveLogin>
