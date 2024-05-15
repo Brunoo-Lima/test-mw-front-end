@@ -19,11 +19,9 @@ interface UserContextProps {
   openModal: (card: CardProps) => void;
   closeModal: () => void;
 
-  modalData: CardProps;
-  setModalData: React.Dispatch<React.SetStateAction<CardProps | null>>;
+  modalData: CardProps | null;
 
   user: UserProps;
-  setUser: React.Dispatch<React.SetStateAction<UserProps>>;
 
   userLogin: (e: FormEvent) => void;
   handleChangeEvents: (
@@ -100,9 +98,7 @@ export const UserProvider = ({ children }: ContextProps) => {
     openModal,
     closeModal,
     modalData,
-    setModalData,
     user,
-    setUser,
     userLogin,
     handleChangeEvents,
     logOut,
