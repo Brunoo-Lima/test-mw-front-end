@@ -10,8 +10,14 @@ import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Image } from './styles/Comics';
+import { useContext } from 'react';
+import { Context } from '../../../../UserContext';
+import ModalComic from '../../../modal/ModalComic';
 
 const Comics = () => {
+  const context = useContext(Context);
+  const { isOpenModal, modalData, openModal, closeModal } = context!;
+
   return (
     <Wrapper>
       <Image
@@ -33,6 +39,7 @@ const Comics = () => {
           // Quando a largura da tela for >= 320px
           320: {
             slidesPerView: 1,
+            spaceBetween: 10,
           },
           768: {
             slidesPerView: 2,
@@ -51,17 +58,18 @@ const Comics = () => {
         {comics.map((comic) => (
           <SwiperSlide key={comic.id}>
             <Comic
-              title={comic.title}
-              img={comic.img}
+              name={comic.name}
+              imgURL={comic.imgURL}
               description={comic.description}
-              available={comic.available}
-              assessments={comic.assessments}
+              openModal={() => openModal(comic)}
             />
           </SwiperSlide>
         ))}
       </Swiper>
 
       <ButtonNext className="swiper-button-next"></ButtonNext>
+
+      {isOpenModal && <ModalComic modalData={modalData} closeModal={closeModal}/>}
     </Wrapper>
   );
 };

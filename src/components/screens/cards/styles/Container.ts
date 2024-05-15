@@ -5,7 +5,8 @@ export const Wrapper = styled.section`
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 700px;
+  height: 800px;
+  max-height: 100%;
   max-width: 1400px;
   margin: 0 auto;
 
@@ -18,6 +19,7 @@ export const Wrapper = styled.section`
 
     @media (max-width: 768px) {
       width: 80%;
+      height: 600px;
     }
   }
 

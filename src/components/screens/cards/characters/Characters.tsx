@@ -1,7 +1,7 @@
-import Card from './Card';
+import Character from './Character';
 import Background from '/img/background.svg';
 
-import { cards } from '../../../data/data.json';
+import { characters } from '../../../data/data.json';
 import { Wrapper, ButtonNext } from '../../cards/styles/Container';
 
 import { useContext } from 'react';
@@ -40,6 +40,7 @@ const Characters = () => {
           // Quando a largura da tela for >= 320px
           320: {
             slidesPerView: 1,
+            spaceBetween: 10,
           },
           768: {
             slidesPerView: 2,
@@ -54,13 +55,13 @@ const Characters = () => {
         }}
         className="slider-controll"
       >
-        {cards.map((card) => (
-          <SwiperSlide key={card.id} className="swiper">
-            <Card
-              name={card.name}
-              imgURL={card.imgURL}
-              description={card.description}
-              openModal={() => openModal(card)}
+        {characters.map((character) => (
+          <SwiperSlide key={character.id} className="swiper">
+            <Character
+              name={character.name}
+              imgURL={character.imgURL}
+              description={character.description}
+              openModal={() => openModal(character)}
             />
           </SwiperSlide>
         ))}

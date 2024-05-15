@@ -2,34 +2,41 @@ import {
   Wrapper,
   Description,
   Button,
+  DescriptionMovie,
   Assessments,
+  Available,
   Stars,
-  Appearances,
 } from './styles/Modal';
 
 import { CircleX } from 'lucide-react';
 import { CardProps } from '../../UserContext';
 
-type ModalCharacterProps = {
+type ModalComicProps = {
   modalData: CardProps | null;
   closeModal: () => void;
 };
 
-const ModalCharacter = ({ modalData, closeModal }: ModalCharacterProps) => {
+const ModalComic = ({ modalData, closeModal }: ModalComicProps) => {
   return (
     <Wrapper>
-      <img src={modalData?.imgURL} alt="Imagem do personagem" />
+      <img
+        src={modalData?.imgURL}
+        alt="Imagem do personagem"
+        width={659}
+        height={439}
+      />
 
       <Description>
         <h2>{modalData?.name}</h2>
-        <Appearances>
-          <p>Aparições: </p>
-          {modalData?.appearances!.map((appe, index) => (
-            <p key={index}>{appe}</p>
-          ))}
-        </Appearances>
 
-        <Assessments>Avaliações dos Fãs</Assessments>
+        <DescriptionMovie>{modalData?.description}</DescriptionMovie>
+
+        <Available>Disponível em streaming: </Available>
+        {modalData?.available!.map((av, index) => (
+          <img src={av} key={index} />
+        ))}
+
+        <Assessments>Crítica</Assessments>
         <Stars>
           {modalData?.assessments.map((ass, index) => (
             <div key={index} dangerouslySetInnerHTML={{ __html: ass }} />
@@ -44,4 +51,4 @@ const ModalCharacter = ({ modalData, closeModal }: ModalCharacterProps) => {
   );
 };
 
-export default ModalCharacter;
+export default ModalComic;

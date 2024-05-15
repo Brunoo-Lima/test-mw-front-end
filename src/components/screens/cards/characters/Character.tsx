@@ -1,6 +1,6 @@
-import { Container, Description, Information } from '../../cards/styles/Cards';
+import { Container, Description, Information } from '../styles/Cards';
 
-type CardProps = {
+type CharacterProps = {
   name: string;
   imgURL: string;
   description: string;
@@ -9,7 +9,12 @@ type CardProps = {
   openModal: () => void;
 };
 
-const Card = ({ name, imgURL, description, openModal }: CardProps) => {
+const Character = ({
+  name,
+  imgURL,
+  description,
+  openModal,
+}: CharacterProps) => {
   return (
     <Container style={{ background: `url(${imgURL})` }}>
       <Description>
@@ -24,4 +29,4 @@ const Card = ({ name, imgURL, description, openModal }: CardProps) => {
   );
 };
 
-export default Card;
+export default Character;

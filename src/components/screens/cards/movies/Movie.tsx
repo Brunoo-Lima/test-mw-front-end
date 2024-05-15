@@ -1,22 +1,21 @@
 import { Container, Description, Information } from '../../cards/styles/Cards';
 
 type MovieProps = {
-  title: string;
-  img: string;
+  name: string;
+  imgURL: string;
   description: string;
-  available: string[];
-  assessments: number;
+  openModal: () => void;
 };
 
-const Movie = ({ title, img, description }: MovieProps) => {
+const Movie = ({ name, imgURL, description, openModal }: MovieProps) => {
   return (
-    <Container style={{ background: `url(${img})` }}>
+    <Container style={{ background: `url(${imgURL})` }}>
       <Description>
         <Information>
-          <h4>{title}</h4>
+          <h4>{name}</h4>
 
           <p>{description}</p>
-          <button>Ver detalhes</button>
+          <button onClick={openModal}>Ver detalhes</button>
         </Information>
       </Description>
     </Container>

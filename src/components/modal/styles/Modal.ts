@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 459px;
+    max-width: 90%;
     height: 439px;
 
     img {
@@ -36,10 +36,6 @@ export const Description = styled.div`
     font-size: ${({ theme }) => theme.size.xxl};
     margin-bottom: 0.625rem;
   }
-
-  h3 {
-    margin-top: 1.5rem;
-  }
 `;
 
 export const Button = styled.button`
@@ -52,4 +48,30 @@ export const Button = styled.button`
   position: absolute;
   bottom: 1.25rem;
   right: 1.75rem;
+`;
+
+export const Appearances = styled.div`
+  margin: 1.2rem 0;
+`;
+
+export const DescriptionMovie = styled.p`
+  font-size: ${({ theme }) => theme.size.sm};
+  font-family: ${({ theme }) => theme.fonts.fonts_stack_light};
+  margin: 1.8rem 0;
+`;
+
+export const Assessments = styled.p`
+  font-size: ${({ theme }) => theme.size.xxl};
+`;
+
+export const Available = styled.p`
+  display: flex;
+  gap: 0.875rem;
+`;
+
+export const Stars = styled.div`
+  font-size: ${({ theme }) => theme.size.xxxl};
+  color: #ffb300;
+  display: flex;
+  gap: 0.5rem;
 `;

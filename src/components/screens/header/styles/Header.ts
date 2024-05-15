@@ -53,6 +53,12 @@ export const Navbar = styled.nav`
     color: #ffffff;
     text-decoration: none;
   }
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+  }
 `;
 
 export const UserProfile = styled.div`

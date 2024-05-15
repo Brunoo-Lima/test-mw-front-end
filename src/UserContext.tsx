@@ -9,14 +9,16 @@ interface UserProps {
 export interface CardProps {
   name: string;
   imgURL: string;
-  appearances: string[];
-  assessments: number;
+  description?: string;
+  appearances?: string[];
+  assessments: string[];
+  available?: string[];
 }
 
-interface UserContextProps {
+export interface UserContextProps {
   isOpenModal: boolean;
 
-  openModal: (card: CardProps) => void;
+  openModal: (character: CardProps) => void;
   closeModal: () => void;
 
   modalData: CardProps | null;
@@ -47,8 +49,8 @@ export const UserProvider = ({ children }: ContextProps) => {
   });
   const navigate = useNavigate();
 
-  const openModal = (card: CardProps) => {
-    setModalData(card);
+  const openModal = (character: CardProps) => {
+    setModalData(character);
     setIsOpenModal(true);
   };
 

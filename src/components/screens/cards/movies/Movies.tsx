@@ -9,8 +9,13 @@ import 'swiper/css/navigation';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { useContext } from 'react';
+import { Context } from '../../../../UserContext';
+import ModalMovie from '../../../modal/ModalMovie';
 
 const Movies = () => {
+  const context = useContext(Context);
+  const { isOpenModal, modalData, openModal, closeModal } = context!;
   return (
     <Wrapper>
       <Image
@@ -32,6 +37,7 @@ const Movies = () => {
           // Quando a largura da tela for >= 320px
           320: {
             slidesPerView: 1,
+            spaceBetween: 10,
           },
           768: {
             slidesPerView: 2,
@@ -50,17 +56,20 @@ const Movies = () => {
         {movies.map((movie) => (
           <SwiperSlide key={movie.id}>
             <Movie
-              title={movie.title}
-              img={movie.img}
+              name={movie.name}
+              imgURL={movie.imgURL}
               description={movie.description}
-              available={movie.available}
-              assessments={movie.assessments}
+              openModal={() => openModal(movie)}
             />
           </SwiperSlide>
         ))}
       </Swiper>
 
       <ButtonNext className="swiper-button-next"></ButtonNext>
+
+      {isOpenModal && (
+        <ModalMovie modalData={modalData} closeModal={closeModal} />
+      )}
     </Wrapper>
   );
 };

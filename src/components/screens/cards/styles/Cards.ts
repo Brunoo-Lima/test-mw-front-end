@@ -7,6 +7,11 @@ export const Container = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 1.875rem;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    max-height: 100%;
+  }
 `;
 
 export const Description = styled.div`
@@ -22,6 +27,11 @@ export const Description = styled.div`
 
   width: 289px;
   height: 234px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    max-height: 100%;
+  }
 `;
 
 export const Information = styled.div`
