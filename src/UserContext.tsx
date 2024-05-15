@@ -6,12 +6,21 @@ interface UserProps {
   password: string;
 }
 
+export interface CardProps {
+  name: string;
+  imgURL: string;
+  appearances: string[];
+  assessments: number;
+}
+
 interface UserContextProps {
   isOpenModal: boolean;
-  handleModal: () => void;
 
-  selectedCard: null;
-  setSelectedCard: React.Dispatch<React.SetStateAction<null>>;
+  openModal: (card: CardProps) => void;
+  closeModal: () => void;
+
+  modalData: CardProps;
+  setModalData: React.Dispatch<React.SetStateAction<CardProps | null>>;
 
   user: UserProps;
   setUser: React.Dispatch<React.SetStateAction<UserProps>>;
@@ -33,16 +42,21 @@ export const Context = createContext<UserContextProps | undefined>(undefined);
 
 export const UserProvider = ({ children }: ContextProps) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [selectedCard, setSelectedCard] = useState(null);
-
+  const [modalData, setModalData] = useState<CardProps | null>(null);
   const [user, setUser] = useState<UserProps>({
     name: '',
     password: '',
   });
   const navigate = useNavigate();
 
-  const handleModal = () => {
-    setIsOpenModal(!isOpenModal);
+  const openModal = (card: CardProps) => {
+    setModalData(card);
+    setIsOpenModal(true);
+  };
+
+  const closeModal = () => {
+    setIsOpenModal(false);
+    setModalData(null);
   };
 
   const userLogin = (e: FormEvent) => {
@@ -83,9 +97,10 @@ export const UserProvider = ({ children }: ContextProps) => {
 
   const values = {
     isOpenModal,
-    handleModal,
-    selectedCard,
-    setSelectedCard,
+    openModal,
+    closeModal,
+    modalData,
+    setModalData,
     user,
     setUser,
     userLogin,

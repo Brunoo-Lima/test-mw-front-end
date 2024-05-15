@@ -14,6 +14,16 @@ export const Wrapper = styled.div`
 
   border-radius: 1.875rem;
   display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 459px;
+    height: 439px;
+
+    img {
+      display: none;
+    }
+  }
 `;
 
 export const Description = styled.div`
@@ -23,6 +33,10 @@ export const Description = styled.div`
   h2 {
     font-size: ${({ theme }) => theme.size.xxl};
     margin-bottom: 0.625rem;
+  }
+
+  h3 {
+    margin-top: 1.5rem;
   }
 `;
 

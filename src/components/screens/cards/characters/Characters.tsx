@@ -5,7 +5,7 @@ import { cards } from '../../../data/data.json';
 import { Wrapper, ButtonNext } from '../../cards/styles/Container';
 
 import { useContext } from 'react';
-import Modal from '../../../modal/Modal';
+import ModalCharacter from '../../../modal/ModalCharacter';
 import { Context } from '../../../../UserContext';
 
 import 'swiper/css';
@@ -17,7 +17,7 @@ import { Image } from './styles/Characters';
 
 const Characters = () => {
   const context = useContext(Context);
-  const { isOpenModal, handleModal } = context!;
+  const { isOpenModal, openModal, closeModal, modalData } = context!;
 
   return (
     <Wrapper>
@@ -60,7 +60,7 @@ const Characters = () => {
               name={card.name}
               imgURL={card.imgURL}
               description={card.description}
-              handleModal={handleModal}
+              openModal={() => openModal(card)}
             />
           </SwiperSlide>
         ))}
@@ -68,7 +68,9 @@ const Characters = () => {
 
       <ButtonNext className="swiper-button-next"></ButtonNext>
 
-      {isOpenModal && <Modal handleModal={handleModal} />}
+      {isOpenModal && (
+        <ModalCharacter modalData={modalData} closeModal={closeModal} />
+      )}
     </Wrapper>
   );
 };
