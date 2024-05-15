@@ -7,6 +7,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  @media (max-width: 468px) {
+    max-height: 100%;
+  }
 `;
 
 export const Logo = styled.h1`

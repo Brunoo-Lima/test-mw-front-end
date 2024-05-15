@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Image = styled.img`
-  height: 100%;
+  max-height: 100%;
   position: absolute;
   right: 0;
   top: 0;

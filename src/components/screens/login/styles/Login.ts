@@ -8,9 +8,9 @@ export const Wrapper = styled.div`
   max-width: 100%;
 
   @media (max-width: 768px) {
-    position: relative;
     z-index: 1000;
     grid-template-columns: 1fr;
+    max-height: 100%;
   }
 `;
 
@@ -20,8 +20,8 @@ export const ContainerLogin = styled.div`
   justify-content: center;
   padding: 0 4rem;
 
-  @media (max-width: 1200px) {
-    align-items: center;
+  @media (max-width: 468px) {
+    padding: 0 2rem;
   }
 
   h2 {
@@ -80,6 +80,7 @@ export const Forms = styled.form`
 
   @media (max-width: 768px) {
     max-width: 100%;
+    justify-content: center;
   }
 `;
 

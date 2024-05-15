@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <Link
       to="login/"
-      style={{ display: 'block', height: '100%', textDecoration: 'none' }}
+      style={{ display: 'block', maxHeight: '100%', textDecoration: 'none' }}
     >
       <Container>
         <Logo>Marvel</Logo>

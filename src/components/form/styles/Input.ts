@@ -24,4 +24,8 @@ export const InputContainer = styled.input`
   &:focus-visible {
     border-color: ${({ theme }) => theme.colors.primary};
   }
+
+  @media (max-width: 468px) {
+    width: 100%;
+  }
 `;
