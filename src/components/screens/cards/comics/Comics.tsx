@@ -10,13 +10,11 @@ import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Image } from './styles/Comics';
-import { useContext } from 'react';
-import { Context } from '../../../../UserContext';
 import ModalComic from '../../../modal/ModalComic';
+import useUserContext from '../../../hook/useUserContext';
 
 const Comics = () => {
-  const context = useContext(Context);
-  const { isOpenModal, modalData, openModal, closeModal } = context!;
+  const { isOpenModal, modalData, openModal, closeModal } = useUserContext();
 
   return (
     <Wrapper>
@@ -69,7 +67,9 @@ const Comics = () => {
 
       <ButtonNext className="swiper-button-next"></ButtonNext>
 
-      {isOpenModal && <ModalComic modalData={modalData} closeModal={closeModal}/>}
+      {isOpenModal && (
+        <ModalComic modalData={modalData} closeModal={closeModal} />
+      )}
     </Wrapper>
   );
 };

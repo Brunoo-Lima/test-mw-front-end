@@ -9,13 +9,11 @@ import 'swiper/css/navigation';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-import { useContext } from 'react';
-import { Context } from '../../../../UserContext';
 import ModalMovie from '../../../modal/ModalMovie';
+import useUserContext from '../../../hook/useUserContext';
 
 const Movies = () => {
-  const context = useContext(Context);
-  const { isOpenModal, modalData, openModal, closeModal } = context!;
+  const { isOpenModal, openModal, closeModal, modalData } = useUserContext();
   return (
     <Wrapper>
       <Image

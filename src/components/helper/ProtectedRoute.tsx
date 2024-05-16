@@ -1,14 +1,13 @@
-import { ReactNode, useContext } from 'react';
+import { ReactNode } from 'react';
 import { Navigate } from 'react-router-dom';
-import { Context } from '../../UserContext';
+import useUserContext from '../hook/useUserContext';
 
 type ProtectedRouteProps = {
   children: ReactNode;
 };
 
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
-  const context = useContext(Context);
-  const { user } = context!;
+  const { user } = useUserContext();
 
   if (user) {
     return <>{children}</>;

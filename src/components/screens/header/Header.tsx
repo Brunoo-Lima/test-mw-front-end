@@ -1,12 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { Wrapper, Container, Logo, Navbar, UserProfile } from './styles/Header';
 import Profile from '/img/profile.svg';
-import { useContext } from 'react';
-import { Context } from '../../../UserContext';
+import useUserContext from '../../hook/useUserContext';
 
 const Header = () => {
-  const context = useContext(Context);
-  const { logOut } = context!;
+  const { logOut } = useUserContext();
 
   return (
     <Wrapper>

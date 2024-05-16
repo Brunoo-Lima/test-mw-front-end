@@ -12,12 +12,10 @@ import {
 } from './styles/Login';
 import Input from '../../form/Input';
 import Checkbox from '../../form/Checkbox';
-import { useContext } from 'react';
-import { Context } from '../../../UserContext';
+import useUserContext from '../../hook/useUserContext';
 
 const Login = () => {
-  const context = useContext(Context);
-  const { user, userLogin, handleChangeEvents } = context!;
+  const { user, userLogin, handleChangeEvents } = useUserContext();
 
   return (
     <Wrapper>
