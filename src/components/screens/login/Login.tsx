@@ -20,7 +20,7 @@ const Login = () => {
 
   return (
     <Wrapper>
-      <ContainerLogin>
+      <ContainerLogin className="animate__fadeInLeft">
         <LogoLogin>Marvel</LogoLogin>
         <Title>Bem-vindo(a) de volta!</Title>
 
@@ -57,8 +57,7 @@ const Login = () => {
       <Background
         src={BackgroundLogin}
         alt="Imagem de fundo dos Vingadores"
-        width={855}
-        height={768}
+        className="animate__fadeInRight"
       />
     </Wrapper>
   );

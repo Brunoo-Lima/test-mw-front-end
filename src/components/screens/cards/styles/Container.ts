@@ -5,8 +5,7 @@ export const Wrapper = styled.section`
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 800px;
-  max-height: 800px;
+  min-height: 100vh;
   max-width: 1400px;
   margin: 0 auto;
 
@@ -33,7 +32,7 @@ export const ButtonNext = styled.div`
   top: 50%;
   color: ${({ theme }) => theme.colors.primary};
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;

@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import 'animate.css/animate.min.css';
+
+const animation = keyframes`
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+`;
 
 export const Wrapper = styled.div`
   background-image: linear-gradient(to right, #400e0e 40%, #ff0000);
@@ -14,6 +24,10 @@ export const Wrapper = styled.div`
 
   border-radius: 1.875rem;
   display: flex;
+
+  .animate__fadeInRightBig {
+    animation: ${animation} 4s;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;

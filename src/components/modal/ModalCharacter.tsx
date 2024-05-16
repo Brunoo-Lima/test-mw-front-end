@@ -17,7 +17,7 @@ type ModalCharacterProps = {
 
 const ModalCharacter = ({ modalData, closeModal }: ModalCharacterProps) => {
   return (
-    <Wrapper>
+    <Wrapper className="animate__fadeInRightBig">
       <img src={modalData?.imgURL} alt="Imagem do personagem" />
 
       <Description>

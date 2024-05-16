@@ -1,5 +1,10 @@
 import { ButtonNext } from '../../cards/styles/Container';
-import { Image, WrapperMovies, SelectField } from './styles/Movies';
+import {
+  Image,
+  WrapperMovies,
+  SelectField,
+  ContainerSelect,
+} from './styles/Movies';
 import Background from '/img/background.svg';
 
 import { useState } from 'react';
@@ -17,7 +22,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 
 const Movies = () => {
   const { isOpenModal, openModal, closeModal, modalData } = useUserContext();
-  const [filterCategory, setFilterCategory] = useState('Launch');
+  const [filterCategory, setFilterCategory] = useState('Chronology');
 
   const filteredMovies = movies.filter(() => {
     if (filterCategory === 'Launch') {
@@ -36,22 +41,18 @@ const Movies = () => {
 
   return (
     <WrapperMovies>
-      <Image
-        src={Background}
-        alt="Imagem de fundo dos Vingadores"
-        width={855}
-        height={768}
-      />
+      <Image src={Background} alt="Imagem de fundo dos Vingadores" />
 
-      <label htmlFor="category">Filtrar por</label>
-      <SelectField
-        name="category"
-        id=""
-        onChange={(e) => setFilterCategory(e.target.value)}
-      >
-        <option value="Chronology">Cronologia</option>
-        <option value="Launch">Lançamento</option>
-      </SelectField>
+      <ContainerSelect>
+        <label htmlFor="category">Filtrar por</label>
+        <SelectField
+          name="category"
+          onChange={(e) => setFilterCategory(e.target.value)}
+        >
+          <option value="Chronology">Cronologia</option>
+          <option value="Launch">Lançamento</option>
+        </SelectField>
+      </ContainerSelect>
 
       <Swiper
         grabCursor={true}

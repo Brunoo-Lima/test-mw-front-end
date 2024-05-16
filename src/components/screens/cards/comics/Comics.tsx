@@ -19,12 +19,7 @@ const Comics = () => {
 
   return (
     <Wrapper>
-      <Image
-        src={Background}
-        alt="Imagem de fundo dos Vingadores"
-        width={855}
-        height={768}
-      />
+      <Image src={Background} alt="Imagem de fundo dos Vingadores" />
 
       <Swiper
         grabCursor={true}

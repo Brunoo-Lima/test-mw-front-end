@@ -1,17 +1,18 @@
 import styled from 'styled-components';
+import 'animate.css/animate.min.css';
+
 import { Logo } from '../../../../styles/Logo';
 
 export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  height: 100vh;
+  min-height: 100vh;
   max-width: 100%;
 
   @media (max-width: 768px) {
     z-index: 1000;
     grid-template-columns: 1fr;
-    max-height: 100%;
   }
 `;
 
@@ -21,8 +22,12 @@ export const ContainerLogin = styled.div`
   justify-content: center;
   padding: 0 4rem;
 
+  .animate__fadeInLeft {
+    animation-duration: 1s;
+  }
+
   @media (max-width: 468px) {
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
 
   h2 {
@@ -109,10 +114,14 @@ export const Register = styled.p`
 
 export const Background = styled.img`
   height: 100vh;
-  width: 100%;
+  max-width: 100%;
+  width: 885px;
 
-  box-shadow: inset 2px 4px 2px rgba(0, 0, 0, 0.02);
   mask-image: linear-gradient(to right, gray 10%, rgba(0, 0, 0, 0.07) 90%);
+
+  .animate__fadeInRight {
+    animation-duration: 1s;
+  }
 
   @media (max-width: 768px) {
     position: absolute;

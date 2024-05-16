@@ -9,7 +9,7 @@ const Home = () => {
       style={{ display: 'block', maxHeight: '100%', textDecoration: 'none' }}
     >
       <Container>
-        <Logo>Marvel</Logo>
+        <Logo className="animate__fadeIn">Marvel</Logo>
       </Container>
     </Link>
   );
