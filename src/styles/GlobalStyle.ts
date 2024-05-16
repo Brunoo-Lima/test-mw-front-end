@@ -1,10 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
-import AxiformaRegular from '../../src/assets/fonts/Axiforma/Kastelov - Axiforma Regular.otf';
-import AxiformaLight from '../../src/assets/fonts/Axiforma/Kastelov - Axiforma Light.otf';
-import AxiformaThin from '../../src/assets/fonts/Axiforma/Kastelov - Axiforma Thin.otf';
+import AxiformaRegular from '../../public/fonts/Axiforma/Kastelov - Axiforma Regular.otf';
+import AxiformaLight from '../../public/fonts/Axiforma/Kastelov - Axiforma Light.otf';
 
-import MarvelLogo from '../assets/fonts/MarvelRegular-Dj83.ttf';
+import MarvelLogo from '../../public/fonts/MarvelRegular-Dj83.ttf';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -21,11 +20,6 @@ export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "Axiforma Light";
     src: url(${AxiformaLight}) format('opentype');
-  }
-
-  @font-face {
-    font-family: "Axiforma Thin";
-    src: url(${AxiformaThin}) format('opentype');
   }
 
   @font-face {

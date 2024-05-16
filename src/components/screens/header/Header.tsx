@@ -1,6 +1,8 @@
-import { NavLink } from 'react-router-dom';
-import { Wrapper, Container, Logo, Navbar, UserProfile } from './styles/Header';
+import { Logo } from '../../../styles/Logo';
+import { Wrapper, Container, Navbar, UserProfile } from './styles/Header';
 import Profile from '/img/profile.svg';
+
+import { NavLink } from 'react-router-dom';
 import useUserContext from '../../hook/useUserContext';
 
 const Header = () => {

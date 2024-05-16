@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { Wrapper } from '../../styles/Container';
+
+export const WrapperMovies = styled(Wrapper)``;
 
 export const Image = styled.img`
   position: absolute;
@@ -14,3 +17,5 @@ export const Image = styled.img`
 
   filter: brightness(0.5);
 `;
+
+export const SelectField = styled.select``;

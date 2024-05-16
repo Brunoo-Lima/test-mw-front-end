@@ -13,6 +13,8 @@ export interface CardProps {
   appearances?: string[];
   assessments: string[];
   available?: string[];
+  year?: number;
+  releaseYear?: number;
 }
 
 export interface UserContextProps {
@@ -47,6 +49,7 @@ export const UserProvider = ({ children }: ContextProps) => {
     name: '',
     password: '',
   });
+
   const navigate = useNavigate();
 
   const openModal = (character: CardProps) => {
@@ -74,16 +77,6 @@ export const UserProvider = ({ children }: ContextProps) => {
     }
   };
 
-  const handleChangeEvents = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >,
-    fieldName: string
-  ) => {
-    const { value } = e.target;
-    setUser({ ...user, [fieldName]: value });
-  };
-
   const logOut = () => {
     setUser({
       name: '',
@@ -93,6 +86,14 @@ export const UserProvider = ({ children }: ContextProps) => {
     window.localStorage.removeItem('username');
     window.localStorage.removeItem('password');
     navigate('/');
+  };
+
+  const handleChangeEvents = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    fieldName: string
+  ) => {
+    const { value } = e.target;
+    setUser({ ...user, [fieldName]: value });
   };
 
   const values = {

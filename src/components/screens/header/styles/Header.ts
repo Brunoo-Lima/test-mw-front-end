@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.header`
-  background-color: #000000;
-  color: #fff;
+  background-color: ${({ theme }) => theme.colors.second};
+  color: ${({ theme }) => theme.colors.text};
 
   padding: 0 2rem;
-  border-bottom: 2px solid #ff0000;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
 `;
 
 export const Container = styled.div`
@@ -24,24 +24,6 @@ export const Container = styled.div`
   }
 `;
 
-export const Logo = styled.h1`
-  background-color: #ff0000;
-  color: #ffffff;
-
-  font-size: 40px;
-  font-family: 'MarvelRegular', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 150px;
-  padding: 10px 0 2px 0;
-  border-radius: 2px;
-`;
-
 export const Navbar = styled.nav`
   display: flex;
   align-items: center;
@@ -49,8 +31,9 @@ export const Navbar = styled.nav`
   gap: 0 2rem;
 
   a {
-    font-size: 16px;
-    color: #ffffff;
+    font-size: ${({ theme }) => theme.size.xl};
+    color: ${({ theme }) => theme.colors.text};
+    font-weight: 600;
     text-decoration: none;
   }
 
@@ -73,13 +56,13 @@ export const UserProfile = styled.div`
   button {
     background: transparent;
     border: none;
-    color: #ffffff;
+    color: ${({ theme }) => theme.colors.text};
 
     cursor: pointer;
 
     p {
-      font-size: 16px;
-      font-weight: 500;
+      font-size: ${({ theme }) => theme.size.xl};
+      font-weight: 600;
     }
   }
 `;

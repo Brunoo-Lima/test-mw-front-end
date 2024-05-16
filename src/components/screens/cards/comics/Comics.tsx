@@ -1,17 +1,18 @@
+import { Image } from './styles/Comics';
 import { ButtonNext, Wrapper } from '../../cards/styles/Container';
-import Comic from './Comic';
 import Background from '/img/background.svg';
 
 import { comics } from '../../../data/data.json';
+
+import Comic from './Comic';
+import ModalComic from '../../../modal/ModalComic';
+import useUserContext from '../../../hook/useUserContext';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-import { Image } from './styles/Comics';
-import ModalComic from '../../../modal/ModalComic';
-import useUserContext from '../../../hook/useUserContext';
 
 const Comics = () => {
   const { isOpenModal, modalData, openModal, closeModal } = useUserContext();

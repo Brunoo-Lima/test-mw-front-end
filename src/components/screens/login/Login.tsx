@@ -1,15 +1,16 @@
-import { Link } from 'react-router-dom';
-import BackgroundLogin from '/img/background.svg';
 import {
   Wrapper,
   ContainerLogin,
   Background,
-  Logo,
+  LogoLogin,
   Title,
   Forms,
   ContentSaveLogin,
   Register,
 } from './styles/Login';
+import BackgroundLogin from '/img/background.svg';
+
+import { Link } from 'react-router-dom';
 import Input from '../../form/Input';
 import Checkbox from '../../form/Checkbox';
 import useUserContext from '../../hook/useUserContext';
@@ -20,7 +21,7 @@ const Login = () => {
   return (
     <Wrapper>
       <ContainerLogin>
-        <Logo>Marvel</Logo>
+        <LogoLogin>Marvel</LogoLogin>
         <Title>Bem-vindo(a) de volta!</Title>
 
         <h2>Acesse sua conta:</h2>

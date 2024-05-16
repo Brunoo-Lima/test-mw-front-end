@@ -1,5 +1,5 @@
-import { ChangeEvent } from 'react';
 import { Container, InputContainer } from './styles/Input';
+import { ChangeEvent } from 'react';
 
 type InputProps = {
   type: string;

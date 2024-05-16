@@ -1,18 +1,18 @@
-import Character from './Character';
+import { Image } from './styles/Characters';
+import { Wrapper, ButtonNext } from '../../cards/styles/Container';
 import Background from '/img/background.svg';
 
 import { characters } from '../../../data/data.json';
-import { Wrapper, ButtonNext } from '../../cards/styles/Container';
 
+import Character from './Character';
 import ModalCharacter from '../../../modal/ModalCharacter';
+import useUserContext from '../../../hook/useUserContext';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 import { Pagination, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Image } from './styles/Characters';
-import useUserContext from '../../../hook/useUserContext';
 
 const Characters = () => {
   const { isOpenModal, openModal, closeModal, modalData } = useUserContext();

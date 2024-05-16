@@ -1,5 +1,6 @@
+import { Container } from './styles/Home';
+import { Logo } from '../../../styles/Logo';
 import { Link } from 'react-router-dom';
-import { Container, Logo } from './styles/Home';
 
 const Home = () => {
   return (

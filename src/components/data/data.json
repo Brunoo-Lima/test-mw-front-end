@@ -64,7 +64,9 @@
       "imgURL": "/img/movies/iron-man.svg",
       "description": "Tony Stark (Robert Downey Jr.) é um industrial bilionário, que também é um brilhante inventor, ao ser sequestrado, ele é obrigado a construir uma arma devastadora, mas ao invés disso, cria uma armadura capaz de mudar a história.",
       "available": ["/img/available/disney.svg"],
-      "assessments": ["&#9733;", "&#9733;", "&#9733;", "&#9734;", "&#9734;"]
+      "assessments": ["&#9733;", "&#9733;", "&#9733;", "&#9734;", "&#9734;"],
+      "year": 2009,
+      "releaseYear": 2008
     },
     {
       "id": 2,
@@ -72,7 +74,9 @@
       "imgURL": "/img/movies/iron-man2.svg",
       "description": "O mundo já sabe que o inventor bilionário Tony Stark (Robert Downey Jr.) é o super-herói blindado Homem de Ferro. Sofrendo pressão do governo, da mídia e do público para compartilhar sua tecnologia com as forças armadas.",
       "available": ["/img/available/disney.svg"],
-      "assessments": ["&#9733;", "&#9733;", "&#9733;", "&#9733;", "&#9734;"]
+      "assessments": ["&#9733;", "&#9733;", "&#9733;", "&#9733;", "&#9734;"],
+      "year": 2011,
+      "releaseYear": 2010
     },
     {
       "id": 3,
@@ -80,7 +84,9 @@
       "imgURL": "/img/movies/thor.svg",
       "description": "Quando é banido do reino de Asgard e exilado na Terra, o arrogante guerreiro Thor (Chris Hemsworth) é obrigado a lutar para reaver seus poderes perdidos.",
       "available": ["/img/available/disney.svg"],
-      "assessments": ["&#9733;", "&#9733;", "&#9733;", "&#9734;", "&#9734;"]
+      "assessments": ["&#9733;", "&#9733;", "&#9733;", "&#9734;", "&#9734;"],
+      "year": 2011,
+      "releaseYear": 2011
     },
     {
       "id": 4,
@@ -88,7 +94,9 @@
       "imgURL": "/img/movies/captain-america.svg",
       "description": "Em Capitão América: O Primeiro Vingador, conhecemos a história de Steve Rogers (Chris Evans) e como ele se tornou o melhor soldado do mundo.",
       "available": ["/img/available/disney.svg"],
-      "assessments": ["&#9733;", "&#9733;", "&#9733;", "&#9733;", "&#9734;"]
+      "assessments": ["&#9733;", "&#9733;", "&#9733;", "&#9733;", "&#9734;"],
+      "year": 1943,
+      "releaseYear": 2011
     },
     {
       "id": 5,
@@ -96,7 +104,9 @@
       "imgURL": "/img/movies/captain-marvel.svg",
       "description": "Capitã Marvel, parte do exército de elite dos Kree, uma raça alienígena, encontra-se no meio de uma batalha entre seu povo e os Skrulls.",
       "available": ["/img/available/disney.svg"],
-      "assessments": ["&#9733;", "&#9733;", "&#9733;", "&#9733;", "&#9734;"]
+      "assessments": ["&#9733;", "&#9733;", "&#9733;", "&#9733;", "&#9734;"],
+      "year": 1995,
+      "releaseYear": 2019
     }
   ],
   "comics": [
