@@ -36,6 +36,7 @@ Para rodar o projeto:
 - [Swiper](https://swiperjs.com/)
 - [Lucide-React](https://lucide.dev/)
 - [React router dom](https://reactrouter.com/en/main)
+- [Animate CSS](https://animate.style/)
 
 ## Estrutura do projeto
 
@@ -45,6 +46,7 @@ Para rodar o projeto:
   - `isOpenModal`: Indica se o modal está aberto.
   - `openModal`: Função para abrir o modal com dados de um personagem.
   - `closeModal`: Função para fechar o modal.
+  - `imagePosition`: Define a posição da imagem dentro do modal.
   - `modalData`: Dados do personagem exibido no modal.
   - `user`: Dados do usuário logado.
   - `userLogin`: Função para realizar login do usuário.
@@ -53,11 +55,13 @@ Para rodar o projeto:
 
 - `./src/components`: São todos os pedaços primordiais de interface como componentes do projeto.
 
-- `./src/components/data`: É um json com arrays, com os dados mockados separados entre personagens, filmes e hqs.
+- `./src/components/data`: É um json com arrays, com os dados mockados separados entre personagens, filmes e hqs, cada array tem suas propriedades específicas.
 
 - `./src/components/form`: Inputs independentes.
 
 - `./src/components/helper`: Componente que verifica se o usuário está logado, se sim, mostra os itens protegidos, se não, redireciona para a página de login.
+
+- `./src/components/hook`: Para acessar o contexto do usuário nos componentes que estão dentro do provider, se caso não estiver, lançará um erro.
 
 - `./src/components/modal`: Modais que são acionado ao clicar em um card, ele trás informações referente ao card onde foi clicado.
 
@@ -66,6 +70,7 @@ Para rodar o projeto:
   - `cards`: Contém as interfaces e os cards referente a cada entidade: Personagem, Filmes e HQs.
 
     - Componente Pai - Characters | Movies | Comics: Temos um mapeamento de uma lista que importamos do `data.json` e renderizamos cada item da lista, em um componente filho.
+      -Movies: Nesse componente tem um filtro, no qual podemos filtrar por CRONOLOGIA ou LANÇAMENTO, baseado no ano de lançamento ou de forma cronológica.
 
       - No componente Pai também renderiza um componente `Modal` com algumas propriedades necessárias, de forma condicionalmente com base no estado de `isOpenModal`. Quando é verdadeiro, o modal é exibido, caso contrário, é oculto.
 
