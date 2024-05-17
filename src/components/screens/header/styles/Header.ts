@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Logo } from '../../../../styles/Logo';
 
 export const Wrapper = styled.header`
   background-color: ${({ theme }) => theme.colors.second};
@@ -24,11 +25,17 @@ export const Container = styled.div`
   }
 `;
 
+export const LogoHeader = styled(Logo)`
+  animation-duration: 1s;
+`;
+
 export const Navbar = styled.nav`
   display: flex;
   align-items: center;
   list-style: none;
   gap: 0 2rem;
+
+  animation-duration: 1s;
 
   a {
     font-size: ${({ theme }) => theme.size.xl};

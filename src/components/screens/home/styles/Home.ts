@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import 'animate.css/animate.min.css';
 
 export const Container = styled.div`
   min-height: 100vh;

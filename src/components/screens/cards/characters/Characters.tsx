@@ -1,5 +1,5 @@
 import { Image } from './styles/Characters';
-import { Wrapper, ButtonNext } from '../../cards/styles/Container';
+import { Wrapper, ButtonNext, Overlay } from '../../cards/styles/Container';
 import Background from '/img/background.svg';
 
 import { characters } from '../../../data/data.json';
@@ -37,12 +37,17 @@ const Characters = () => {
           },
           768: {
             slidesPerView: 2,
+            spaceBetween: 20,
+            centeredSlides: false,
+          },
+          1024: {
+            slidesPerView: 2,
             spaceBetween: 30,
             centeredSlides: false,
           },
-          900: {
+          1200: {
             slidesPerView: 3,
-            spaceBetween: 40,
+            spaceBetween: 30,
             centeredSlides: false,
           },
         }}
@@ -63,7 +68,9 @@ const Characters = () => {
       <ButtonNext className="swiper-button-next"></ButtonNext>
 
       {isOpenModal && (
-        <ModalCharacter modalData={modalData} closeModal={closeModal} />
+        <Overlay>
+          <ModalCharacter modalData={modalData} closeModal={closeModal} />
+        </Overlay>
       )}
     </Wrapper>
   );

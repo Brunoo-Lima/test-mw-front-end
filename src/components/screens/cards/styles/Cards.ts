@@ -8,6 +8,8 @@ export const Container = styled.div`
   overflow: hidden;
   border-radius: 1.875rem;
 
+  animation-duration: 1s;
+
   @media (max-width: 768px) {
     max-width: 100%;
     max-height: 100%;

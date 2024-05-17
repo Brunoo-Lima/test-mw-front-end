@@ -1,5 +1,5 @@
 import { Image } from './styles/Comics';
-import { ButtonNext, Wrapper } from '../../cards/styles/Container';
+import { ButtonNext, Overlay, Wrapper } from '../../cards/styles/Container';
 import Background from '/img/background.svg';
 
 import { comics } from '../../../data/data.json';
@@ -37,12 +37,17 @@ const Comics = () => {
           },
           768: {
             slidesPerView: 2,
+            spaceBetween: 20,
+            centeredSlides: false,
+          },
+          1024: {
+            slidesPerView: 2,
             spaceBetween: 30,
             centeredSlides: false,
           },
-          900: {
+          1200: {
             slidesPerView: 3,
-            spaceBetween: 40,
+            spaceBetween: 30,
             centeredSlides: false,
           },
         }}
@@ -64,7 +69,9 @@ const Comics = () => {
       <ButtonNext className="swiper-button-next"></ButtonNext>
 
       {isOpenModal && (
-        <ModalComic modalData={modalData} closeModal={closeModal} />
+        <Overlay>
+          <ModalComic modalData={modalData} closeModal={closeModal} />
+        </Overlay>
       )}
     </Wrapper>
   );

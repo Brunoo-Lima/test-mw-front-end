@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import 'animate.css/animate.min.css';
 
 import { Logo } from '../../../../styles/Logo';
 
@@ -22,9 +21,7 @@ export const ContainerLogin = styled.div`
   justify-content: center;
   padding: 0 4rem;
 
-  .animate__fadeInLeft {
-    animation-duration: 1s;
-  }
+  animation-duration: 1s;
 
   @media (max-width: 468px) {
     padding: 0 1rem;
@@ -119,16 +116,9 @@ export const Background = styled.img`
 
   mask-image: linear-gradient(to right, gray 10%, rgba(0, 0, 0, 0.07) 90%);
 
-  .animate__fadeInRight {
-    animation-duration: 1s;
-  }
+  animation-duration: 2s;
 
   @media (max-width: 768px) {
-    position: absolute;
-    z-index: -1000;
-  }
-
-  @media (max-width: 468px) {
     display: none;
   }
 `;

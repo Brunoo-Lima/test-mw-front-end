@@ -1,4 +1,4 @@
-import { ButtonNext } from '../../cards/styles/Container';
+import { ButtonNext, Overlay } from '../../cards/styles/Container';
 import {
   Image,
   WrapperMovies,
@@ -27,7 +27,7 @@ const Movies = () => {
   const filteredMovies = movies.filter(() => {
     if (filterCategory === 'Launch') {
       const MappedMoviesReleaseYear = movies.sort(
-        (a, b) => a.releaseYear - b.releaseYear
+        (a, b) => a.releaseYear - b.releaseYear,
       );
       return MappedMoviesReleaseYear;
     } else if (filterCategory === 'Chronology') {
@@ -70,12 +70,17 @@ const Movies = () => {
           },
           768: {
             slidesPerView: 2,
+            spaceBetween: 20,
+            centeredSlides: false,
+          },
+          1024: {
+            slidesPerView: 2,
             spaceBetween: 30,
             centeredSlides: false,
           },
-          900: {
+          1200: {
             slidesPerView: 3,
-            spaceBetween: 40,
+            spaceBetween: 30,
             centeredSlides: false,
           },
         }}
@@ -97,7 +102,9 @@ const Movies = () => {
       <ButtonNext className="swiper-button-next"></ButtonNext>
 
       {isOpenModal && (
-        <ModalMovie modalData={modalData} closeModal={closeModal} />
+        <Overlay>
+          <ModalMovie modalData={modalData} closeModal={closeModal} />
+        </Overlay>
       )}
     </WrapperMovies>
   );

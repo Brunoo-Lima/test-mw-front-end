@@ -1,9 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
+import 'animate.css/animate.min.css';
 
-import AxiformaRegular from '../../public/fonts/Axiforma/Kastelov - Axiforma Regular.otf';
-import AxiformaLight from '../../public/fonts/Axiforma/Kastelov - Axiforma Light.otf';
+import AxiformaRegular from '/fonts/Axiforma/Kastelov - Axiforma Regular.otf';
+import AxiformaLight from '/fonts/Axiforma/Kastelov - Axiforma Light.otf';
 
-import MarvelLogo from '../../public/fonts/MarvelRegular-Dj83.ttf';
+import MarvelLogo from '/fonts/MarvelRegular-Dj83.ttf';
 
 export const GlobalStyle = createGlobalStyle`
   * {

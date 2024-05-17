@@ -9,7 +9,10 @@ type ComicProps = {
 
 const Comic = ({ name, imgURL, description, openModal }: ComicProps) => {
   return (
-    <Container style={{ background: `url(${imgURL})` }}>
+    <Container
+      style={{ background: `url(${imgURL})` }}
+      className="animate__zoomIn"
+    >
       <Description>
         <Information>
           <h4>{name}</h4>
