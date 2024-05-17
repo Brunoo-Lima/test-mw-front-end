@@ -42,6 +42,10 @@ export const Navbar = styled.nav`
     color: ${({ theme }) => theme.colors.text};
     font-weight: 600;
     text-decoration: none;
+
+    &.active {
+      color: ${({ theme }) => theme.colors.tertiary};
+    }
   }
 
   @media (max-width: 768px) {

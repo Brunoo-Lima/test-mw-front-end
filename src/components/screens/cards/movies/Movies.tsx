@@ -21,7 +21,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 
 const Movies = () => {
-  const { isOpenModal, openModal, closeModal, modalData } = useUserContext();
+  const { isOpenModal, openModal, closeModal, modalData, imagePosition } =
+    useUserContext();
   const [filterCategory, setFilterCategory] = useState('Chronology');
 
   const filteredMovies = movies.filter(() => {
@@ -103,7 +104,11 @@ const Movies = () => {
 
       {isOpenModal && (
         <Overlay>
-          <ModalMovie modalData={modalData} closeModal={closeModal} />
+          <ModalMovie
+            imagePosition={imagePosition}
+            modalData={modalData}
+            closeModal={closeModal}
+          />
         </Overlay>
       )}
     </WrapperMovies>

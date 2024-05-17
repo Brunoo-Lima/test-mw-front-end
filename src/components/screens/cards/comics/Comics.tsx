@@ -15,7 +15,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 
 const Comics = () => {
-  const { isOpenModal, modalData, openModal, closeModal } = useUserContext();
+  const { isOpenModal, modalData, openModal, closeModal, imagePosition } =
+    useUserContext();
 
   return (
     <Wrapper>
@@ -70,7 +71,11 @@ const Comics = () => {
 
       {isOpenModal && (
         <Overlay>
-          <ModalComic modalData={modalData} closeModal={closeModal} />
+          <ModalComic
+            imagePosition={imagePosition}
+            modalData={modalData}
+            closeModal={closeModal}
+          />
         </Overlay>
       )}
     </Wrapper>

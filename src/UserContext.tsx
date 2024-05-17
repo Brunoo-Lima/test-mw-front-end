@@ -23,6 +23,8 @@ export interface UserContextProps {
   openModal: (character: CardProps) => void;
   closeModal: () => void;
 
+  imagePosition: 'left' | 'right';
+
   modalData: CardProps | null;
 
   user: UserProps;
@@ -30,7 +32,7 @@ export interface UserContextProps {
   userLogin: (e: FormEvent) => void;
   handleChangeEvents: (
     e: React.ChangeEvent<HTMLInputElement>,
-    fieldName: string
+    fieldName: string,
   ) => void;
 
   logOut: () => void;
@@ -50,10 +52,15 @@ export const UserProvider = ({ children }: ContextProps) => {
     password: '',
   });
 
+  const [imagePosition, setImagePosition] = useState<'left' | 'right'>('left');
+
   const navigate = useNavigate();
 
   const openModal = (character: CardProps) => {
     setModalData(character);
+    const randomPosition = Math.random() < 0.5 ? 'left' : 'right';
+
+    setImagePosition(randomPosition);
     setIsOpenModal(true);
   };
 
@@ -90,7 +97,7 @@ export const UserProvider = ({ children }: ContextProps) => {
 
   const handleChangeEvents = (
     e: React.ChangeEvent<HTMLInputElement>,
-    fieldName: string
+    fieldName: string,
   ) => {
     const { value } = e.target;
     setUser({ ...user, [fieldName]: value });
@@ -105,6 +112,7 @@ export const UserProvider = ({ children }: ContextProps) => {
     userLogin,
     handleChangeEvents,
     logOut,
+    imagePosition,
   };
 
   return <Context.Provider value={values}>{children}</Context.Provider>;

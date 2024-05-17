@@ -12,19 +12,19 @@ import { CircleX } from 'lucide-react';
 import { CardProps } from '../../UserContext';
 
 type ModalComicProps = {
+  imagePosition: 'left' | 'right';
   modalData: CardProps | null;
   closeModal: () => void;
 };
 
-const ModalComic = ({ modalData, closeModal }: ModalComicProps) => {
+const ModalComic = ({
+  modalData,
+  closeModal,
+  imagePosition,
+}: ModalComicProps) => {
   return (
-    <Wrapper>
-      <img
-        src={modalData?.imgURL}
-        alt="Imagem do personagem"
-        width={659}
-        height={439}
-      />
+    <Wrapper imagePosition={imagePosition} className="animate__zoomIn">
+      <img src={modalData?.imgURL} alt="Imagem do personagem" />
 
       <Description>
         <h2>{modalData?.name}</h2>

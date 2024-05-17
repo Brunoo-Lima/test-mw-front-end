@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ imagePosition: 'left' | 'right' }>`
   background-image: linear-gradient(to right, #400e0e 40%, #ff0000);
   width: 659px;
   height: 439px;
@@ -14,6 +14,8 @@ export const Wrapper = styled.div`
 
   border-radius: 1.875rem;
   display: flex;
+  flex-direction: ${(props) =>
+    props.imagePosition === 'left' ? 'row' : 'row-reverse'};
 
   animation-duration: 1s;
 
@@ -59,7 +61,7 @@ export const Appearances = styled.div`
 export const DescriptionMovie = styled.p`
   font-size: ${({ theme }) => theme.size.sm};
   font-family: ${({ theme }) => theme.fonts.fonts_stack_light};
-  margin: 1.8rem 0;
+  margin: 1.5rem 0;
 `;
 
 export const Assessments = styled.p`

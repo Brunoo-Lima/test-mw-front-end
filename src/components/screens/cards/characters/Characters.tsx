@@ -15,7 +15,8 @@ import { Pagination, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Characters = () => {
-  const { isOpenModal, openModal, closeModal, modalData } = useUserContext();
+  const { isOpenModal, openModal, closeModal, modalData, imagePosition } =
+    useUserContext();
 
   return (
     <Wrapper>
@@ -69,7 +70,11 @@ const Characters = () => {
 
       {isOpenModal && (
         <Overlay>
-          <ModalCharacter modalData={modalData} closeModal={closeModal} />
+          <ModalCharacter
+            imagePosition={imagePosition}
+            modalData={modalData}
+            closeModal={closeModal}
+          />
         </Overlay>
       )}
     </Wrapper>

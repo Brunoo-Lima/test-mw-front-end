@@ -8,7 +8,5 @@ export const Container = styled.div`
   justify-content: center;
   text-align: center;
 
-  .animate__fadeIn {
-    animation-duration: 1s;
-  }
+  animation-duration: 1s;
 `;

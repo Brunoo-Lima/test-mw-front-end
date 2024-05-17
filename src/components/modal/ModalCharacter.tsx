@@ -11,13 +11,18 @@ import { CircleX } from 'lucide-react';
 import { CardProps } from '../../UserContext';
 
 type ModalCharacterProps = {
+  imagePosition: 'left' | 'right';
   modalData: CardProps | null;
   closeModal: () => void;
 };
 
-const ModalCharacter = ({ modalData, closeModal }: ModalCharacterProps) => {
+const ModalCharacter = ({
+  imagePosition,
+  modalData,
+  closeModal,
+}: ModalCharacterProps) => {
   return (
-    <Wrapper className="animate__zoomIn">
+    <Wrapper imagePosition={imagePosition} className="animate__zoomIn">
       <img src={modalData?.imgURL} alt="Imagem do personagem" />
 
       <Description>
