@@ -8,7 +8,7 @@ import {
   ContentSaveLogin,
   Register,
 } from './styles/Login';
-import BackgroundLogin from '/img/background.svg';
+import BackgroundLogin from '/img/background.png';
 
 import { Link } from 'react-router-dom';
 import Input from '../../form/Input';
@@ -39,15 +39,11 @@ const Login = () => {
             value={user.password}
             onChange={(e) => handleChangeEvents(e, 'password')}
           />
-
           <ContentSaveLogin>
             <Checkbox />
-
             <Link to="/*">Esqueci a senha</Link>
           </ContentSaveLogin>
-
           <button type="submit">Entrar</button>
-
           <Register>
             Ainda não tem o login? <Link to="/register">Cadastre-se</Link>
           </Register>

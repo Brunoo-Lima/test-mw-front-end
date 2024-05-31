@@ -7,6 +7,7 @@ interface UserProps {
 }
 
 export interface CardProps {
+  id: number;
   name: string;
   imgURL: string;
   description?: string;
@@ -32,7 +33,7 @@ export interface UserContextProps {
   userLogin: (e: FormEvent) => void;
   handleChangeEvents: (
     e: React.ChangeEvent<HTMLInputElement>,
-    fieldName: string,
+    fieldName: string
   ) => void;
 
   logOut: () => void;
@@ -97,7 +98,7 @@ export const UserProvider = ({ children }: ContextProps) => {
 
   const handleChangeEvents = (
     e: React.ChangeEvent<HTMLInputElement>,
-    fieldName: string,
+    fieldName: string
   ) => {
     const { value } = e.target;
     setUser({ ...user, [fieldName]: value });

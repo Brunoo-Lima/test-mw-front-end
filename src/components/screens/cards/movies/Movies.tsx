@@ -19,26 +19,36 @@ import 'swiper/css/navigation';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { CardProps } from '../../../../UserContext';
 
 const Movies = () => {
   const { isOpenModal, openModal, closeModal, modalData, imagePosition } =
     useUserContext();
   const [filterCategory, setFilterCategory] = useState('Chronology');
 
-  const filteredMovies = movies.filter(() => {
-    if (filterCategory === 'Launch') {
-      const MappedMoviesReleaseYear = movies.sort(
-        (a, b) => a.releaseYear - b.releaseYear,
-      );
-      return MappedMoviesReleaseYear;
-    } else if (filterCategory === 'Chronology') {
-      const MappedMoviesYear = movies.sort((a, b) => a.year - b.year);
+  const sortMovies = (movies: CardProps[], category: string) => {
+    switch (category) {
+      case 'Launch':
+        return [...movies].sort((a, b) => {
+          if (a.releaseYear !== undefined && b.releaseYear !== undefined) {
+            return a.releaseYear - b.releaseYear;
+          }
+          return 0;
+        });
 
-      return MappedMoviesYear;
-    } else {
-      return false;
+      case 'Chronology':
+        return [...movies].sort((a, b) => {
+          if (a.year !== undefined && b.year !== undefined) {
+            return a.year - b.year;
+          }
+          return 0;
+        });
+      default:
+        return movies;
     }
-  });
+  };
+
+  const filteredMovies = sortMovies(movies, filterCategory);
 
   return (
     <WrapperMovies>
@@ -93,7 +103,7 @@ const Movies = () => {
             <Movie
               name={movie.name}
               imgURL={movie.imgURL}
-              description={movie.description}
+              description={movie.description!}
               openModal={() => openModal(movie)}
             />
           </SwiperSlide>

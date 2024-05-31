@@ -37,7 +37,7 @@ const ModalCharacter = ({
         <Assessments>Avaliações dos Fãs</Assessments>
         <Stars>
           {modalData?.assessments.map((ass, index) => (
-            <div key={index} dangerouslySetInnerHTML={{ __html: ass }} />
+            <span key={index}>{ass === '&#9733;' ? '★' : '☆'}</span>
           ))}
         </Stars>
       </Description>
